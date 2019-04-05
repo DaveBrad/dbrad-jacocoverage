@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+AutoUpdate-Show-In-Client: false
+OpenIDE-Module: dbrad.jacoco.agent.lib/1
+OpenIDE-Module-Layer: dbrad/jacoco/agent/lib/layer.xml
+OpenIDE-Module-Localizing-Bundle: dbrad/jacoco/agent/lib/Bundle.properties
+OpenIDE-Module-Specification-Version: 0.7.9
+

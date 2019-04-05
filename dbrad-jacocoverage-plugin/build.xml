@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See harness/README in the NetBeans platform -->
+<!-- for some information on what you could do (e.g. targets to override). -->
+<!-- If you delete this file and reopen the project it will be recreated. -->
+<project name="dbrad.jacocoverage.plugin" default="netbeans" basedir=".">
+    <description>Builds, tests, and runs the project dbrad.jacocoverage.plugin.</description>
+    <import file="nbproject/build-impl.xml"/>
+    
+    <!--    assume a unit test (can be changed) if the test.type is not set
+    as is the case when 'test' is selected from the dbrad-jacocoverage-plugin
+    project context menu 
+    --> 
+    <target name="test-preinit-default" unless="test.type">
+        <!-- information for the console -->
+        <echo message=" applying defaults:" />
+        
+        <!--      
+        'test' at the project context-menu does not assign a 'test.type' so the
+        testing request becomes floating and an ANT error occurs.
+        Also:
+        test.unit.cp.extra does not appear to work, that is, adding to the
+        classpath
+        
+        the other alternative Netbeans testing directory 'qa-functional' cannot be 
+        invoked via the 'test' project context-menu
+        THUS
+        for dbrad-jacocoverage the functional and unit tests are both placed into
+        the UNIT tests structure/arrangement
+
+        by setting this unit, files ending in Test will be executed
+        -->
+        <property name="test.type" value="unit"/>
+        <echo message="   test.type: ${test.type}" />    
+   </target>
+   
+    <target name="test-preinit" depends="test-preinit-default" if="test.type">
+        <echo message="   continue.after.failing.tests: ${continue.after.failing.tests}" />
+        <!--      
+        test.unit.cp.extra/test.unit.run.cp.extra does not appear to work, that
+        is, copy class files into the unit/classes directory or classpath
+        
+        the following will process all the jar files from
+            test.unit.lib.3rd.party=test/unit/lib3party 
+        into 
+            unit/classes
+        in an expanded format. 
+        
+        Adding more jars needs to change settings in project.properties for
+           test.unit.cp.extra=test/unit/lib3party/objecttestdata_19_1.jar
+        to 
+           test.unit.cp.extra=test/unit/lib3party/ANOTHER.jar:test/unit/lib3party/objecttestdata_19_1.jar
+                                       - - - - - - - - - - - - - - - - - - - - - - 
+        
+        This approach is a hack as Netbeans has issues in its testing architecture.
+        
+    replace 'unit' with 'qa-functional' in the property name to make this work for
+    qa-functional testing (warning: 'test' in project context-menu does not work
+    for qa-functional structure [another issue for Netbeans])
+    -->
+   
+    <macrodef name="test-3rd-party">
+      <attribute name="test.type"/>
+      <attribute name="build.classes.dir"/>
+      <sequential>
+        <echo message=" process the 3rd-party library JARs: expand and copy"/>
+        <property name="lib3rdparty.dir" location="${test.@{test.type}.lib.3rd.party}"/>
+        <property name="build.test.mnmnmn.classes.dir" location="@{build.classes.dir}"/>
+
+        <unzip dest="${build.test.mnmnmn.classes.dir}">
+          <fileset dir="${lib3rdparty.dir}">
+            <include name="*.jar" />
+          </fileset>    
+        </unzip>
+        
+      </sequential>
+    </macrodef>
+        
+    <echo message="test type setting: ${test.type}"/> 
+    <echo message="test includes setting: ${test.includes}"/> 
+        
+    <test-3rd-party test.type="${test.type}" 
+                        build.classes.dir="build/test/${test.type}/classes" />
+  </target>
+</project>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/* Copyright (c) 2017-2018 dbradly. All rights reserved. */
+-->
+<!DOCTYPE map PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 2.0//EN" "http://java.sun.com/products/javahelp/map_2_0.dtd">
+<map version="2.0">
+    <mapID target="dbrad.jacocoverage.plugin.about" url="plugin-about.html"/>
+    <mapID target="dbrad.jacocoverage.plugin.about_1" url="plugin-about_1.html"/>
+    <mapID target="dbrad.jacocoverage.plugin.license" url="license/license.html"/>
+    <mapID target="dbrad.jacocoverage.plugin.licensebckgnd" url="license/licensebckgnd.html"/>
+</map>

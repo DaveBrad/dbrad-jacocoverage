@@ -1,0 +1,18 @@
+/* Copyright (c) 2017 dbradly. All rights reserved. */
+
+/* 
+    Created on : Aug 13, 2017, 2:42:47 PM
+    Author     : dbradley
+*/
+.ulsmall{
+    margin-top: 0px;
+    list-style-type: bullet;
+}
+
+.ulbullet li p{
+    padding-left: 6ch;
+}
+.bottom0px{
+    margin-bottom: 0px;
+}
+

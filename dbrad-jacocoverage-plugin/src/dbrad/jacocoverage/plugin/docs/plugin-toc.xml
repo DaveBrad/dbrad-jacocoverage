@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/* Copyright (c) 2017-2018 dbradly. All rights reserved. */
+-->
+<!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 2.0//EN" "http://java.sun.com/products/javahelp/toc_2_0.dtd">
+<toc version="2.0">
+    <tocitem text="dbrad-jacocoverage plugin">
+        <tocitem text="About" target="dbrad.jacocoverage.plugin.about"/>
+        <tocitem text="About dbrad-jacocoverage-plugin dd" target="dbrad.jacocoverage.plugin.about_1"/>
+        <tocitem text="License" target="dbrad.jacocoverage.plugin.license">
+            <tocitem text="Background and other considerations" target="dbrad.jacocoverage.plugin.licensebckgnd"/>
+        </tocitem>
+    </tocitem>
+</toc>

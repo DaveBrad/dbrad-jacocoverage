@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2017 dbradley.
+-->
+<html>
+  <head>
+    <title>dbrad-jacocoverage introduction</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="docparts.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="tocctrl.css">
+    <script src="tocctrl.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="intro.css">
+  </head>
+  <body onload="applyDocIndex(); applyTOC();">
+    <div class='bodywithtoc'>
+      <h1>Introduction dbrad-jacocoverage</h1>
+      <div class="divindent">
+        <p> Code coverage is a very useful tool for the development of applications
+          of all kinds. Coverage is most useful in test-driven-development, but 
+          also for other development methodologies where testing for code
+          coverage adds significant value to quality.</p>
+        <p>Dbrad-jacocoverage uses www.elcemma.org jacocoagent to do 
+          on-the-fly code coverage, in that it instruments at run time and
+          captures coverage data during the run. Then the coverage data is
+          processed to obtain results.</p>
+        <p>Also, dbrad-jacocoverage is a significant modification to 
+          tikione-jacocoverage, which has been in an archived status since May/2016. 
+          There are modified and additional capabilities in dbrad-jacocoverage 
+          which handle project dependencies, include and exclude package patterns
+          better and in a more configure-able manner
+          (see  following <a href="#capablity">dbrad-jacocoverage capabilities</a> ).</p>
+        <div id="docindexcpyrght">
+        </div>
+
+        <!-- table of content -->
+        <h2 id='tocid'>Table of contents</h2>
+        <div id="tocmaindiv" class="toclist">
+        </div>
+      </div>
+
+      <h1 id="introext">About dbrad-jacocoverage</h1>
+      <div class="divindent">
+        <p>Dbrad-jacocoverage provides basic global-settings which does
+          only a project's source folder coverage of a principle-project.
+
+          Processing beyond just the principle-project, requires the 
+          project-specific settings to expand coverage components to include coverage 
+          for source &amp; test-source folders, packages within folder(s), and selection of 
+          dependent/associated/sub-project projects as inclusive components. 
+
+          This implies that a Netbeans project as a whole and its coverage is
+          achieve-able, with selective component management thrown in 
+          (say: just JUnits).</p>
+
+        <h2 id='bckgnd'>Background</h2>
+        <div class="divindent">
+          <p>
+            Coverage may be used in an operational/QA management process to
+            assist in determining quality by adding coverage metrics as an
+            additional measure, but by no means the only measure. However
+            for development, coverage provides quick feedback as to a developer's
+            exercise of their code (assuming they build supporting tests to
+            exercise their code).
+          </p>
+          <p>
+            dbrad-jacocoverage came about due to a need to code-coverage a project
+            which has multiple libraries as dependent/associate projects. The 
+            existing coverage tools on Netbeans IDE prior to dbrad-jacocoverage
+            were limiting or expensive. Also, most other coverage tools
+            for Netbeans appear to be retired, archived, or no longer maintained; so another
+            reason for dbrad-jacocoverage.
+          </p>
+          <p>dbrad-jacocoverage was created from tikione-jacocoverage as its base.
+            The latter
+            being limited to processing <b>only</b> the source-code folders for
+            a single J2SE/J2EE project (that is: non-inclusive for
+            dependent projects, test source code [JUnit,...]). 
+
+            Later in tikione's development, NB-module (NBM) coverage was added with a
+            slightly different processing architecture suitable for NBMs, but it too is
+            non-inclusive for test source code.</p>
+          <p>
+            Tikione-jacocoverage has been archived by its author. See
+            <a href="https://github.com/jonathanlermitage/tikione-jacocoverage"
+               >https://github.com/jonathanlermitage/tikione-jacocoverage.</a></p>
+        </div>
+        <h2 id='capablity'>dbrad-jacocoverage capabilities</h2>
+        <div class="divindent">
+          <p>A brief description of dbrad-jacocoverage capabilities follows:&nbsp;
+            &nbsp;&nbsp;[<span class="desctest"><span class="desccolor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              colored items are dbrad-jacocoverage enhancements</span>]</p>
+
+          <table class='enhance'>
+            <tr>
+              <td>Reporting</td>
+              <td>
+                <ul>
+                  <li>Source-code high-lighting
+                    <ul>
+                      <li>High-light the source-code and/or
+                        <span>test-source-code</span> against coverage captured data.
+                      </li>
+                      <li><span>Dependent/associate projects are inclusive</span>
+                        upon configuration setting.</li>
+                    </ul>
+                  </li>
+                  <li>XML report
+                    <ul>
+                      <li>Captured data converted to XML file, which may be used
+                        in post-processing of coverage data.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Console report
+                    <ul>
+                      <li>Report to an IDE output console which will display
+                        for single and/or <span>associate-projects</span>.
+                      </li>
+                      <li><span>Test-source-code is inclusive in reports</span> upon 
+                        configuration setting.</li>
+                      <li>Support of <span>by-project</span> or <span>by-grouped/bundled</span>
+                        report layouts.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>HTML report
+                    <ul>
+                      <li>Report to HTML file format, for single and/or <span>associate-projects</span>
+                        formats.
+                      </li>
+                      <li><span>Test-source-code is inclusive in reports</span> upon 
+                        configuration setting.</li>
+                      <li>Support of <span>by-project</span> or <span>by-grouped/bundled</span>
+                        report layouts.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Generation of reports
+                    <ul>
+                      <li>Reporting for source-code and/or <span>test-source-code</span>.</li>
+                      <li>Reporting on <span>associate-projects</span>.</li>
+                      <li>Project<span>(s), folder(s)</span> and <span>package(s)</span> reporting.</li>
+                      <li>Support of <span>by-project</span> or <span>by-grouped/bundled</span>
+                        report layouts.
+                      </li>
+                    </ul>
+                  <li>Operational/QA management
+                    <ul>
+                      <li>
+                        Report into <span><i>default</i></span>
+                        or an explicit <span><i>user defined</i></span>
+                        directory.</li>
+                      <li>
+                        Report as <span>time-stamped directory/files</span> for operational
+                        post-processing or QA archiving.</li>
+                      <li>
+                        Manage time-stamped report storage, <span>so only N report
+                          time-stamp directories</span> are retained.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>Coverage of packages</td>
+              <td>Set which packages are to be <span>explicitly 
+                  included or excluded</span>, for a project
+                and/or its <span>associate-projects</span> and/or
+                its <span>source-folder(s)</span>.</td>
+            </tr>
+            <tr>
+              <td>
+                &bull; <span>Run w/jacocoverage</span><br>
+                &bull; <span>Test w/jacocoverage</span>
+              </td>
+              <td>
+                Invokes ANT code-coverage execution for a <b>project</b>, as 
+                a Netbeans 'run' or 'test' component.
+                <ul>
+                  <li>Project level:
+                    <ul>
+                      <li><b>Projects</b>-view project context-menu items.</li>
+                      <li><span><b>Files</b>-view</span> project context-menu items.</li>
+                    </ul>
+                  </li>
+                </ul></td>
+            </tr>
+            <tr>
+              <td>
+                &bull; <span>Run file w/jacocoverage</span><br>
+                &bull; <span>Test file w/jacocoverage</span>
+              </td>
+              <td>
+                Invokes ANT code-coverage execution for a <b>file</b>, as a 
+                Netbeans 'run file' or 'test file' component.
+                <ul>
+                  <li><span>Single file</span>: (Run or test is presented as appropriate to the
+                    file selected.)
+                    <ul>
+                      <li><span><b>Projects</b>-view</span> file context-menu items.</li>
+                      <li><span>Files-view</span> file context-menu items.</li>
+                      <li><span>Java file editor</span> editor context menu items.</li>
+                    </ul>
+                  </li>
+                </ul></td>
+            </tr>
+            <tr>
+              <td>&bull; <span>Reset (w/jacocoverage)</span></td>
+              <td>
+                 Resets the hi-lighting on the source files.
+                <ul>
+                  <li>Project level:
+                    <ul>
+                  <li>
+                    <b>Projects</b>-view project-context-menu item named differently.</li>
+                  <li><span><b>Files</b>-view</span> project-context-menu item.</li>
+                </ul>
+                </li>
+                </ul></td>
+            </tr>
+            <tr>
+              <td>&bull; <span>Merge clear (w/jacocoverage)</span></td>
+              <td>
+                 <span>Clears the merge processing algorithm for all runs
+                 of a project-specific configuration setting for a project. This menu item only shows
+                 if merge capability is set in the configuration settings.</span>
+                <ul>
+                  <li><span>Project level:</span>
+                    <ul>
+                  <li>
+                    <span><b>Projects</b>-view project-context-menu item named differently.</span></li>
+                  <li><span><b>Files</b>-view project-context-menu item.</span></li>
+                </ul>
+                </li>
+                </ul></td>
+            </tr>
+            <tr>
+              <td><span>Associate-projects</span></td>
+              <td>A project may depend on other associated-projects
+                as set via the project-properties &gt; libraries tab, <span>these are 
+                  include-able</span> in the processing upon configuration setting. 
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

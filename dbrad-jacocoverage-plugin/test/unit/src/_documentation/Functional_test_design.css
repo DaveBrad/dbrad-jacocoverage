@@ -1,0 +1,112 @@
+/* Copyright (c) 2017 dbradley. All rights reserved.
+*/
+/* 
+    Created on : Sep 3, 2017, 12:18:11 PM
+    Author     : dbradley
+*/
+.codetable td{
+    vertical-align: top;
+}
+.codetable tr:nth-child(odd) td{
+    background-color: #efffff;
+}
+.codetable tr:nth-child(even) td{
+    background-color: #fffbe3;  
+}
+pre {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.codetable span{
+    color: magenta;
+}
+.srccode p:first-child{
+    margin-top: 0px;
+}
+.indentp h4{
+    margin-bottom: 0px;
+}
+.indentp p{
+    margin-top: 0px;
+    margin-left: 2ch;
+}
+.indentp p:nth-child(n+2){
+    margin-left: 2ch;
+}
+
+.layoutstruct td{
+    vertical-align: top;
+}
+.layoutstruct td:nth-child(2){
+    font-style: italic;
+}
+
+.layoutstruct tr:nth-child(1),
+.layoutstruct tr:nth-child(7){background-color: #fffce3;}
+
+.layoutstruct tr:nth-child(2){background-color: #efffff;}
+.layoutstruct tr:nth-child(3){background-color: #dfffff;}
+.layoutstruct tr:nth-child(4){background-color: #cfffff;}
+.layoutstruct tr:nth-child(5){background-color: #bfffff;}
+.layoutstruct tr:nth-child(6){background-color: #afffff;}
+
+.layoutstruct tr:nth-child(8),
+.layoutstruct tr:nth-child(15){background-color: #fffab0;}
+
+.layoutstruct tr:nth-child(9){background-color: #efffff;}
+.layoutstruct tr:nth-child(10){background-color: #dfffff;}
+.layoutstruct tr:nth-child(11){background-color: #cfffff;}
+.layoutstruct tr:nth-child(12){background-color: #bfffff;}
+.layoutstruct tr:nth-child(13){background-color: #afffff;}
+.layoutstruct tr:nth-child(14){background-color: #9fffff;}
+
+.layoutstruct tr:nth-child(16){background-color: #fff86b;}
+.layoutstruct tr:nth-child(17){background-color: #efffff;}
+.layoutstruct tr:nth-child(18){background-color: #dfffff;}
+
+
+.layoutstruct tr:nth-child(n+2):nth-child(-n+6) td:nth-child(1),
+.layoutstruct tr:nth-child(n+9):nth-child(-n+14) td:nth-child(1),
+.layoutstruct tr:nth-child(n+17):nth-child(-n+18) td:nth-child(1){
+    background-color: white;
+}
+
+.layoutstruct span{
+    color: brown;
+    font-weight: bolder;
+}
+
+.tablesetup{
+    border: 1px solid;
+}
+
+.tablesetup tr{
+    border: 1px solid;
+    padding-top:  15px;
+}
+.tablesetup td{
+    border: 1px solid;
+    vertical-align: top;
+    padding: 10px 2ch 10px 2ch;
+}
+
+.sm{
+    font-style: italic;
+    font-size: 0.8em;
+    color: black;
+}
+.pv{
+    color: brown;
+}
+.fv{
+    color:darkcyan;
+}
+
+.additonindent{
+    padding-left: 4ch;
+}
+
+.tcfoldertable{
+    padding-left: 3ch;
+}
+

@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+AutoUpdate-Show-In-Client: false
+OpenIDE-Module: dbrad.jacocoverage.mgr/1
+OpenIDE-Module-Localizing-Bundle: dbrad/jacocofpm/mgr/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0.0.2017
+

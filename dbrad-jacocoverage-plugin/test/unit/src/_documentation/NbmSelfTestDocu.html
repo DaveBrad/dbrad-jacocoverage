@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2018 dbradley. All rights reserved.
+-->
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./NbmSelfTestDocu.css">
+    <script src="SVG.js"></script>
+    <script src="StoryTellHtm.js"></script>
+    <script src="NbmSelfShapeObjs.js"></script>
+    <script src="NbmSelfTestDrawer.js"></script>
+  </head>
+  <body>
+
+    <div>
+      <h1>dbrad-jacocoverage self code-coverage</h1>
+      <p>Netbeans provides the ability to load NBM module programs into a running
+        NB IDE when developing an NBM program. Although the 'live' install of
+        a NBM into a developer IDE is possible there is a recommendation not
+        to do so; due to the instability it may cause in a developer's IDE.</p>
+      <div class="idesol">
+        <p>Instability is the case when attempting to use dbrad-jacocoverage to
+          code coverage itself.</p>
+        <p>Overcoming the instability and using 'self' to
+          do code-coverage was an interesting challenge. A solution was
+          to have:
+        <table>
+          <tr ><td id="devideclrid" class="devideclr">
+              &nbsp;&bull; developer IDE 
+            </td>
+            <td>launch a testbed-IDE with the self-test-case
+              class name passed through
+            </td></tr>
+          <tr><td id="tstbedideclrid" class="tstbedideclr">
+              &nbsp;&bull; testbed-IDE </td>
+            <td>set code coverage settings via dialogs, with all source
+              code folders ON, and then launches a testing-IDE
+            </td></tr>
+          <tr><td id="tstngideid" class="tstngideclr">
+              &nbsp;&bull; testing-IDE </td>
+            <td>perform a dbrad-jacocoverage test-case class.
+            </td></tr>
+        </table>
+      </div>
+      <br>
+
+      <div id="story1">
+        <script>storyHtmlContainer("story1", "Self test code-coverage flow through story");</script>
+      </div>
+
+      <div id="stage1">
+        <h4>Stage 1a: Developer IDE: request self-test coverage start</h4>
+        <table class='slftsttabl1'>
+          <tr>
+            <th></th>
+            <th>name of script</th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>1) </td>
+            <td>SelfTest_AllRunner.java</td>
+            <td>auto</td>
+            <td>Will run all test-case files in the 'func' folder via the 
+              <code>A_RunnerOfAllTest</code> test-case class automatically.
+              <p>This is long running which has special code to 
+                keep the test active, due to Netbeans timeouts.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>2) </td>
+            <td>SelfTest_ManualTesting.java</td>
+            <td></td>
+            <td>Will run a test script as a test-case that allows the user to
+              perform manual testing in a dbrad-jacocoverage-test-bed developer IDE 
+              environment. Basically a 'debugging extension' environment for
+              checking tests that are being written. //99</td>
+          </tr>
+          <tr>
+            <td>3) </td>
+            <td>SelfTest_SelectFuncTC.java</td>
+            <td>auto</td>
+            <td>Will present a selection of 'func' folder test files dialog so 
+              the test to run may be selected. The test will then run 
+              automatically.</td>
+          </tr>
+        </table>  
+        <div class='acsselftests'>
+          <p>The self-test-cases are accessed via the Developer-IDE Project/Files view:</p>
+          <table class='slftsttabl2'>
+            <tr>
+              <td>dbrad-jacocoverage-plugin&nbsp;&nbsp;&gt;</td>
+              <td><span class="prjvu">Unit Test Packages</span>
+                <br><span class="flvu">test &gt; unit &gt; src</span>
+              </td>
+              <td>&nbsp;&gt; packg &gt; testcases &gt; cvr</td>
+              <td><span class="prjvu">Projects view</span>
+                <br><span class="flvu">Files view</span></td>
+          </table>
+        </div>
+      </div>
+
+      <h4>Stage 1b: Developer-IDE prepare for Test-bed-IDE</h4>
+      Preparing a test-bed-IDE involves:
+      <ul>
+        <li>Copy all dbrad-jacocoverage projects (nbproject, source, test code) to a working
+          directory on the disk storage.<br>&nbsp;&nbsp;&nbsp;&nbsp;
+          <b>$HOME/nbmselftest/dbrad-jacocoverage</b> directory.
+          <ul><li>The copy will include the most recent files that are in the development IDE.
+              Implying the test-bed-IDE will be current and is compile-able.</li>
+            <li>Filter-out copying of 'git'and Netbeans 'build' directories.
+              <ul><li>Prevents accidental git interactions and will cause the
+                  test-bed to fresh compile in its environment.</li></ul>
+            </li></ul>
+        </li>
+      </ul>
+    </div>
+    <div id='stage2'>
+      <h4>Stage 2: Launch Test-bed-IDE:</h4>
+      <ul>
+        <li>Launch the test-bed-IDE from the Developer-IDE as a pseudo test-case.
+          <ul>
+            <li>Size the test-bed-IDE window dimensions.</li>
+            <li>Open dbrad-jacocoverage suite-&amp;-subprojects
+              via the projects-view from directory <b>$HOME/nbmselftest/dbrad-jacocoverage</b>.
+              <ul><li>Wait on IDE loading projects appropriately.</li></ul>  
+            </li>
+            <li>Select =&gt; &nbsp;&nbsp;&nbsp;&nbsp;<i>dbrad-jacocoverage-plugin</i><br>
+              right-click =&gt; project-properties &gt; category &gt; jacocoverage-dbrad<br>
+
+              <ul>
+                <li>Set HTML reports ON.</li>
+                <li>Set the HTML reports to go to users directory:&nbsp;&nbsp;&nbsp;&nbsp;
+                  <b>$HOME/nbmselftest/rpts</b>.</li>
+                <li>Set the principle-&amp;-associate project(s) source-packages to be
+                  code-coverage ON.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div id='stage3'>
+      <h4>Stage 3: Testing: testing-IDE or manual</h4>
+      Depending on the NbmSelfTest_xxxxxxxx type (manual, select TC or All TC)
+      <ul>
+        <li>Manual:
+          <ul><li>the test-bed-IDE will wait for a very long time and allows the
+              user to perform manual actions.<br>
+              -- -- exit of the test-bed-IDE will return to the developer-IDE</li>
+          </ul>
+        </li>
+        <li>Select TC or All TC:
+          <ul>
+            <li>the test-bed IDE automatically traverses the
+              project-view and causes the appropriate 'func' test-case to be
+              executed (Test File w/jacocoverage)<br>
+              - thus invoking a self-test arrangement<br>
+              -- this will cause a <b>testing-IDE</b> to be launched and testing done<br>
+              -- upon completion will automatically close-off testing-IDE<br>
+              -- and cause the test-bed-IDE complete too
+              -- finally the developer-IDE is returned to
+            </li>
+          </ul>
+      </ul>
+      Reports will be found in the <b>$HOME/nbmselftest/rpts</b> directory.
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+/* Copyright (c) 2017 dbradley. */
+.gifplayer{
+}
+.gifplayertable{
+  /*border: 1px solid;*/
+}
+.gifplayertable td{
+  /*padding: 5px 20px 5px 20px;*/
+  /*text-align: center;*/
+}
+.gifplayertable tr:nth-child(1) td{
+  border: 2px;
+  border-style: solid;
+  border-radius: 15px;
+  padding: 5px 20px 5px 20px;
+}
+.gifplayertable tr:nth-child(2) td{
+   text-align: center;
+   margin-left: -25px;
+}
+.gifplaybuttdiv{
+  margin-left: 20px; 
+}
+.gifplaybuttdiv button{
+  vertical-align: top;
+  height: 28px;
+  margin-left: 20px;
+  border-radius: 12px;
+}
+
+.gifplaybuttdiv button:hover{
+  cursor: pointer;
+}
+/*.gifplaybuttdiv button:focus{
+  outline: none;
+  border: 2px solid #00afff;
+  outline-width: 2px;
+  outline-offset: 5px;
+}*/
+

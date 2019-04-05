@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+AutoUpdate-Show-In-Client: true
+OpenIDE-Module: dbrad.jacocoverage.plugin
+OpenIDE-Module-Layer: dbrad/jacocoverage/plugin/layer.xml
+OpenIDE-Module-Localizing-Bundle: dbrad/jacocoverage/plugin/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0.0.2017
+OpenIDE-Module-Needs: org.openide.filesystems.FileUtil.toFileObject
+

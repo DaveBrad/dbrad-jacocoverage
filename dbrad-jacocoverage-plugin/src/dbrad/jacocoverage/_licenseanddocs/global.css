@@ -1,0 +1,115 @@
+/* Copyright (c) 2017 dbradley. */
+
+.dlofsettings{
+  padding-left: 2ch;
+}
+.dlofsettings dt{ padding-top: 8px;}
+.dlofsettings dd p{ margin-bottom: 0px;}
+.dlofsettings dd{ padding-bottom: 10px; border-bottom: 1px solid;}
+
+.maindiv{
+  position: relative;
+  width: 700px;
+  height: 700px;
+}
+.img1{
+  position: relative;
+}
+
+.selhitlite{
+  background: lightgray;
+  color: black;
+}
+
+.buttimg{
+  background-color: transparent;
+  border: none;
+}
+.buttimg:hover{
+  cursor: pointer;
+  border: 1px dashed magenta;
+}
+
+.enblhi{
+  position: absolute;
+  top: 166px;
+  left: 15px;
+  min-width: 240px;
+  min-height: 20px;
+}
+.clrtheme{
+  position: absolute;
+  top: 162px;
+  left: 275px;
+  min-width: 365px;
+  min-height: 26px;
+}
+.enblmlthi{
+  position: absolute;
+  top: 195px;
+  left: 30px;
+  min-width: 310px;
+  min-height: 20px;
+}
+.byprj{
+  position: absolute;
+  top: 223px;
+  left: 15px;
+  min-width: 140px;
+  min-height: 20px;
+}
+.bygrpbun{
+  position: absolute;
+  top: 223px;
+  left: 162px;
+  min-width: 198px;
+  min-height: 20px;
+}
+.keepxml{
+  position: absolute;
+  top: 250px;
+  left: 33px;
+  min-width: 340px;
+  min-height: 20px;
+}
+.nbcons{
+  position: absolute;
+  top: 280px;
+  left: 33px;
+  min-width: 340px;
+  min-height: 20px;
+}
+.genhtml{
+  position: absolute;
+  top: 308px;
+  left: 33px;
+  min-width: 310px;
+  min-height: 20px;
+}
+.autohtml{
+  position: absolute;
+  top: 336px;
+  left: 50px;
+  min-width: 320px;
+  min-height: 20px;
+}
+.bundjar{
+  position: absolute;
+  top: 369px;
+  left: 15px;
+  min-width: 660px;
+  min-height: 20px;
+}
+.custjarloc{
+  position: absolute;
+  top: 405px;
+  left: 15px;
+  min-width: 720px;
+  min-height: 24px;
+}
+.divindent{  padding-left: 15px;}
+.divindent p:nth-child(1){  margin-top: 0px;}
+
+.dlofsettings dt{
+  font-weight: bold;
+}

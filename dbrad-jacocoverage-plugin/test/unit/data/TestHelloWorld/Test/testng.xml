@@ -1,0 +1,32 @@
+<!DOCTYPE suite SYSTEM "./test/_testng/testng-1.0.dtd"> 
+<suite name="Suite test" verbose="2" thread-count="1" 
+       parallel="false" preserve-order="true" junit="false" single-threaded="true" >
+<test name="SvgButt" 
+      preserve-order="true" parallel="false" annotations="JDK" junit="false" >
+ <classes >
+   <class name="wemosd1.relaytst.SvgButt" /> 
+ </classes>
+</test>
+
+<test name="ButtonButt" 
+      preserve-order="true" parallel="false" annotations="JDK" junit="false" >
+ <classes >
+   <class name="wemosd1.relaytst.ButtonButt" /> 
+ </classes>
+</test>
+
+<test name="MultiBrowser" 
+      preserve-order="true" parallel="false" annotations="JDK" junit="false" >
+ <classes >
+   <class name="wemosd1.relaytst.MultiBrowser" /> 
+ </classes>
+</test>
+
+<test name="ConfigAccess" 
+      preserve-order="true" parallel="false" annotations="JDK" junit="false" >
+ <classes >
+   <class name="wemosd1.configtst.ConfigAccess" /> 
+ </classes>
+</test>
+</suite>
+

@@ -1,0 +1,73 @@
+/* Copyright (c) 2018 dbradley. All rights reserved. */
+
+.slftsttabl1{
+}
+.slftsttabl1 td{
+  text-align: left;
+  vertical-align: top;
+}
+.slftsttabl1 td:nth-child(2){
+  padding-right: 2ch;
+  font-style: italic;
+}
+.slftsttabl1 td:nth-child(3){
+  padding-right: 2ch;
+}
+.slftsttabl1 tr td{
+  border-top: 1px solid;
+  padding-top: 5px;
+  padding-bottom:5px;
+}
+.slftsttabl1 tr td p {
+  margin-bottom: 0px;
+}
+
+.slftsttabl2{ padding-left: 5ch; vertical-align: middle;}
+.slftsttabl2 td{text-align: right;}
+
+.slftsttabl2 td:nth-child(2),
+.slftsttabl2 td:nth-child(4){
+  text-align: left; 
+}
+
+.slftsttabl2 td:nth-child(4) {
+  padding-left: 4ch;
+  font-style: italic;
+}
+
+
+
+.spncomn{
+  color: magenta;
+}
+
+.acsselftests{
+  padding-left: 3ch;
+}
+.acsselftests p{
+  margin-bottom: 0px;
+}
+
+.prjvu{
+  color:blueviolet;
+}
+.flvu{
+  color: darksalmon;
+}
+
+li {
+  margin-top: 5px;
+}
+.idesol table{
+  margin-left: 4ch;
+  margin-top: 0px;
+}
+
+.idesol p{
+  margin-bottom: 0px;
+}
+
+.devideclr{color : #00b300;}
+.tstbedideclr{ color : #F5A9F2;}
+.tstngideclr{ color : #08ebfa;}
+

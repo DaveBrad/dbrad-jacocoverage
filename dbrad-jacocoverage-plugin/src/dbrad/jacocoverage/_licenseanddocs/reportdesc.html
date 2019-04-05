@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2017 dbradley.
+-->
+<html>
+  <head>
+    <title>dbrad-jacocoverage reports brief description</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="docparts.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="prjspec.css">
+    <script src="prjspec.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="tocctrl.css">
+    <script src="tocctrl.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="gifplayer.css">
+    <script src="gifplayer.js"></script>
+
+    <script src="prjspec.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="reportdesc.css">
+  </head>
+  <body onload="applyDocIndex(); applyTOC(); applyGifPlayer(); onloadSetImageDivs();"> 
+    <div class='bodywithtoc'>
+      <h1 id='topprjspcctnt'>Report brief description</h1>
+      <div class="divindent">
+        <p>Brief description of the kind of reports that are generated from dbrad-jacocoverage
+          and its settings.</p>
+        <div id="docindexcpyrght">
+        </div>
+
+        <!-- table of content -->
+        <h2 id='tocid'>Table of contents</h2>
+        <div id="tocmaindiv" class="toclist">
+        </div>
+      </div>
+      <h1 id="rptkinds">Report kinds</h1>
+      <div class="divindent">
+        <p>For code coverage there are a number of settings for getting reports,
+          and a location as to where to place them. What kinds of report layout 
+          and where they are stored is a users decision.</p>
+        <p>The reports produced are:</p>
+
+        <h2 id="rptxml">XML report</h2>
+        <div class="divindent">
+          <p>Produced from a jacocoverage binary
+            coverage data file (internal). This file may be kept and externally
+            processed by the user's testing/coverage post-processes. The format
+            is provided by www/eclemma.org jacocoagent.</p>
+        </div>
+        <h2 id="rptcons">Netbeans console report</h2>
+        <div class="divindent">
+          <p>Prints the report with basic values for
+            packages &amp; classes to the NB console (Output view). There is no file produced for
+            this kind of report. This report kind is useful for quick viewing, but if the project
+            is large then it would be better to get an HTML report.</p>
+          <p>The result lines are color coded to represent pass, fail states.</p>
+          <p>The by-project and by-grouped/bundled settings define how the
+            reports are presented, as shown following.</p>
+
+          <h3 id="byprjcons">By-project (console)</h3>
+          <div class="divindent">
+            <p>Provides results for each class-file and is presented
+              by its project, its source code folder and the package and class.
+            </p>
+            <pre class="presection">=== JaCoCoverage report (powered by JaCoCo from EclEmma) ===
+Recorded: 2018-01-13 11:48:54
+Covered | Partially covered | Not covered | Java Class
+
+TestHelloWorldMultiple - Source Packages
+    <span class="gn">0</span>     <span class="rd">0     7    .TestHelloWorldMultipleDefault.java</span>
+    <span class="gn">6</span>     <span class="rd">0     1</span>    testhelloworldmultiple.<span class="rd">TestHelloWorldMultiple.java</span>
+
+TestHelloWorldMultiple - Test Packages
+    <span class="gn">5</span>     <span class="rd">0     0</span>    isolate.<span class="gn">IsolatedNotUnitTest.java</span>
+    <span class="gn">0</span>     <span class="rd">0     3</span>    unit.isolate.<span class="rd">IsolatedTest.java</span>
+
+TestHelloWorldMulti_1 - Source Packages
+    <span class="gn">3</span>     <span class="rd">0     0</span>    hello.<span class="gn">HelloPrint.java</span>
+
+TestHelloWorldMulti_2 - Source Packages
+    <span class="gn">3</span>     <span class="rd">0     0</span>    hello.<span class="gn">world.WorldPrint.java</span>
+    <span class="gn">3</span>     <span class="rd">0     0</span>    otherpck.<span class="gn">WorldPrintOtherPacke.java</span>
+
+End of report</pre>        
+          </div>
+          <h3 id="bygrpcons">By-grouped/bundled (console)</h3>
+          <div class="divindent">
+            <p>Presents as a list of classes and the results obtained.</p>
+            <pre class="presection">=== JaCoCoverage report (powered by JaCoCo from EclEmma) ===
+Recorded: 2018-01-13 11:46:19
+Covered | Partially covered | Not covered | Java Class
+
+TestHelloWorldMultiple
+    <span class="gn">0</span>      <span class="rd">0     7    .TestHelloWorldMultipleDefault.java</span>
+    <span class="gn">3</span>      <span class="rd">0     0</span>    hello.<span class="gn">HelloPrint.java</span>
+    <span class="gn">3</span>      <span class="rd">0     0</span>    hello.world.<span class="gn">WorldPrint.java</span>
+    <span class="gn">5</span>      <span class="rd">0     0</span>    isolate.<span class="gn">IsolatedNotUnitTest.java</span>
+    <span class="gn">3</span>      <span class="rd">0     0</span>    otherpck.<span class="gn">WorldPrintOtherPacke.java</span>
+    <span class="gn">6</span>      <span class="rd">0     1</span>    testhelloworldmultiple.<span class="rd">TestHelloWorldMultiple.java</span>
+    <span class="gn">0</span>      <span class="rd">0     3</span>    unit.isolate.<span class="rd">IsolatedTest.java</span>
+
+End of report</pre>       
+
+          </div>
+        </div>
+        <h2 id="rpthtml">HTML report file(s)</h2>
+        <div class="divindent">
+          <p>HTML reports are generated via the jacocoagent architecture from
+            the internal and/or XML file. The format of the reports is
+            describe at 'www.eclemma.org', please see this site for details, however,
+            for the most part is unnecessary.</p>
+          <p>The HTML may be set to automatically launch in the system
+            default browser. Most modern browsers allow a program to
+            launch the browser; but there are exceptions that disallow
+            automatic browser launch capability, or need special
+            protocols (Known: Microsoft Edge).</p>
+          <p>The by-project and by-grouped/bundled settings define how the
+            reports are presented, as shown following.</p>
+
+          <h3 id="byprjhtml">By-project (HTML)</h3>
+          <div class="divindent">
+            <p>This layout presents a header page (created internally by dbrad-jacocoverage)
+              and then each project to report-on is added as a link-item. The
+              display of the added projects report is viewed via a view within
+              the header page.
+            </p> 
+            <div class='gifplayer' 
+                 data-butt-img-id="byprjgifid"
+                 data-gifimg-path="imgs/gif/byprj_explain.gif">
+            </div>
+            <p>The project report document is the jacocoverage report folder-file set
+              for a project (its classes and methods).</p>
+
+            <h4 id="browserhtmlerr">Browser reporting error condition</h4>
+              <div class="divindent">
+                <p>There is the potential for a report not being displayed
+                  with the following browser display (or similar). This is caused 
+                  by limitations of browsers and very long paths to a HTML file.</p>
+                <p>The example below shows dbrad-jacocoverage being coverage tested
+                  by itself. As the module has a long name, file paths are also long
+                  and result in too long a path for the browser-and-platform file
+                  system.</p>
+
+                <div class="compressol">
+                  <p>Overcome the issue by:
+                  <ol>
+                    <li>Copy the report directory to a fewer leading folders path.</li>
+                    <li>Have reports going to a user-defined directory with fewer leading
+                      folders.</li>
+                  </ol>
+                </div>
+                <div class="compressol">
+                  <p>Fewer leading folders:
+                  <ul>
+                    <li><pre>file:///<span class="fewer2">tmp_yyyy/clone/dbrad-jacocoverage/dbrad-jacocoverage-suite/dbrad-jacocoverage-plugin/.jacocodbrad/</span>ts_20180127_134734_117_reportDir/............</pre>
+                    <li><pre>file:///<span class="fewer">reportDir/</span>ts_20180127_134734_117_reportDir/............</pre>
+                  </ul>
+                </div>
+                <img src="imgs/rpt_fileerror.png" alt="image missing">
+              </div>
+          </div>
+        </div>
+        <h3 id="bygrphtml">By-grouped/bundled (HTML)</h3>
+        <div class="divindent">
+
+          <p>This layout is created by jacocoverage and groups/bundles all the
+            projects and all project-classes &amp; methods into a single 
+            report folder-file set.</p>
+          <div class='gifplayer' 
+               data-butt-img-id="bygrpgifid"
+               data-gifimg-path="imgs/gif/bygrp_explain.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

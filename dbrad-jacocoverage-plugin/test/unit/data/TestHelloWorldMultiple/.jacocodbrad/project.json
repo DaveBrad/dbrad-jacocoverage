@@ -1,0 +1,113 @@
+{
+  "adtalpkgs.listing" : [ ],
+  "exclpkgs.listing" : {
+    "hello.*" : false,
+    "otherpck.*" : false,
+    "testhelloworldmultiple.*" : false,
+    "unit.*" : false,
+    "unit.isolate.*" : false
+  },
+  "pkgfltr.listing" : {
+    "TestHelloWorldMulti_1" : {
+      "Source Packages" : {
+        "" : {
+          "on" : false,
+          "isTst" : false,
+          "hasJava" : true,
+          "pfCvr" : "COVER_NO"
+        },
+        "hello" : {
+          "on" : false,
+          "isTst" : false,
+          "hasJava" : true,
+          "pfCvr" : "COVER_YES"
+        }
+      }
+    },
+    "TestHelloWorldMulti_2" : {
+      "Source Packages" : {
+        "" : {
+          "on" : false,
+          "isTst" : false,
+          "hasJava" : true,
+          "pfCvr" : "COVER_YES"
+        },
+        "hello" : {
+          "on" : false,
+          "isTst" : false,
+          "hasJava" : true,
+          "pfCvr" : "COVER_BY_PARENT"
+        },
+        "hello.world" : {
+          "on" : false,
+          "isTst" : false,
+          "hasJava" : true,
+          "pfCvr" : "COVER_BY_PARENT"
+        },
+        "otherpck" : {
+          "on" : false,
+          "isTst" : false,
+          "hasJava" : true,
+          "pfCvr" : "COVER_BY_PARENT"
+        }
+      }
+    },
+    "TestHelloWorldMultiple" : {
+      "Source Packages" : {
+        "" : {
+          "on" : false,
+          "isTst" : false,
+          "hasJava" : true,
+          "pfCvr" : "COVER_NO"
+        },
+        "testhelloworldmultiple" : {
+          "on" : false,
+          "isTst" : false,
+          "hasJava" : true,
+          "pfCvr" : "COVER_YES"
+        }
+      },
+      "Test Packages" : {
+        "" : {
+          "on" : true,
+          "isTst" : true,
+          "hasJava" : true,
+          "pfCvr" : "COVER_YES"
+        },
+        "isolate" : {
+          "on" : true,
+          "isTst" : true,
+          "hasJava" : true,
+          "pfCvr" : "COVER_BY_PARENT"
+        },
+        "unit" : {
+          "on" : true,
+          "isTst" : true,
+          "hasJava" : true,
+          "pfCvr" : "COVER_BY_PARENT"
+        },
+        "unit.isolate" : {
+          "on" : true,
+          "isTst" : true,
+          "hasJava" : true,
+          "pfCvr" : "COVER_BY_PARENT"
+        }
+      }
+    }
+  },
+  "preferences" : {
+    "JaCoCoverage.Editor.EnableCodeHighlighting" : "true",
+    "JaCoCoverage.Editor.EnableCodeHighlightingExtended" : "true",
+    "JaCoCoverage.Excl.Junit" : "false",
+    "JaCoCoverage.Excl.JunitExtension" : "false",
+    "JaCoCoverage.Excl.Testng" : "false",
+    "JaCoCoverage.Html.AutoOpenReport" : "true",
+    "JaCoCoverage.Html.EnableReport" : "false",
+    "JaCoCoverage.NbConsole.EnableReport" : "true",
+    "JaCoCoverage.Prj.OverrideGlobals" : "true",
+    "JaCoCoverage.report.default.dir" : "true",
+    "JaCoCoverage.report.retain" : "0",
+    "JaCoCoverage.report.timestamp" : "false",
+    "JaCoCoverage.report.user.defined.dir" : "./.jacocodbrad/"
+  }
+}

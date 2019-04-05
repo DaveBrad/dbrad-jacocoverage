@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE module_updates PUBLIC "-//NetBeans//DTD Autoupdate Catalog 2.6//EN" "http://www.netbeans.org/dtds/autoupdate-catalog-2_6.dtd">
+<module_updates timestamp="39/42/21/03/04/2019">
+
+
+
+<module_group name="Java SE">
+
+<module codenamebase="dbrad.jacocoverage.plugin" distribution="dbrad-jacocoverage-plugin.nbm" downloadsize="3428125" homepage="https://github.com/DaveBrad/dbrad-jacocoverage" license="C7B1B922" moduleauthor="dbradley" needsrestart="true" releasedate="2019/04/03" targetcluster="dbrad_jacocoverage_suite">
+    <manifest AutoUpdate-Show-In-Client="true" OpenIDE-Module="dbrad.jacocoverage.plugin" OpenIDE-Module-Display-Category="Java SE" OpenIDE-Module-Implementation-Version="190403" OpenIDE-Module-Java-Dependencies="Java &gt; 1.8" OpenIDE-Module-Long-Description="&lt;html&gt;NetBeans module that provides JaCoCo code coverage (JDK 8). For Ant based Java SE, EE and NBM projects.&lt;br&gt;GitHub: &lt;a href=&quot;https://github.com/DaveBrad/dbrad-jacocoverage&quot;&gt;https://github.com/.../dbrad-jacocoverage&lt;/a&gt; &lt;br&gt;&lt;br&gt;Base tikione-jacocoverage.&lt;br&gt;&lt;br&gt;Maven support is already provided by NetBeans:&lt;a href=&quot;http://wiki.netbeans.org/MavenCodeCoverage&quot;&gt;http://wiki.netbeans.org/MavenCodeCoverage&lt;/a&gt;.&lt;/html&gt;" OpenIDE-Module-Module-Dependencies="dbrad.jacocoverage.analyzer &gt; 1.0.0.2017, dbrad.jacocoverage.lib/1 &gt; 1.0.0.2017, dbrad.jacocoverage.mgr/1 &gt; 1.0, org.apache.tools.ant.module/3 &gt; 3.81.1.2, org.jdesktop.beansbinding/1 &gt; 1.27.1.121, org.netbeans.api.annotations.common/1 &gt; 1.27.1, org.netbeans.api.java.classpath/1 &gt; 1.52.1, org.netbeans.api.progress/1 &gt; 1.47.1, org.netbeans.api.progress.nb &gt; 1.47.1, org.netbeans.modules.editor.lib/3 &gt; 4.7.1.23.3.55, org.netbeans.modules.java.project/1 &gt; 1.66.1, org.netbeans.modules.java.source &gt; 0.158.1.32.2.25.2.1, org.netbeans.modules.jellytools.platform/3 &gt; 3.29.1, org.netbeans.modules.jemmy/3 &gt; 3.27.1, org.netbeans.modules.options.api/1 &gt; 1.45.1, org.netbeans.modules.project.ant/1 &gt; 1.66.1, org.netbeans.modules.projectapi/1 &gt; 1.66.1, org.netbeans.modules.projectuiapi/1 &gt; 1.88.1.8, org.netbeans.modules.projectuiapi.base/1 &gt; 1.85.1.9, org.openide.awt &gt; 7.67.1, org.openide.dialogs &gt; 7.42.1, org.openide.execution &gt; 9.3.1, org.openide.filesystems &gt; 9.10.1, org.openide.io &gt; 1.49.1, org.openide.loaders &gt; 7.66.1, org.openide.modules &gt; 7.48.1, org.openide.nodes &gt; 7.45.1, org.openide.text &gt; 6.67.1, org.openide.util &gt; 9.7.1, org.openide.util.lookup &gt; 8.33.1, org.openide.util.ui &gt; 9.6.1" OpenIDE-Module-Name="dbrad-jacocoverage-plugin" OpenIDE-Module-Needs="org.openide.filesystems.FileUtil.toFileObject" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="Code Coverage Netbeans plugin for run and test coverage visualization for source, testcase-source and multiple projects." OpenIDE-Module-Specification-Version="1.0.0.2017"/>
+    
+</module>
+
+</module_group>
+
+<module_group name="Libraries">
+
+<module codenamebase="dbrad.jacoco.agent.lib" distribution="dbrad-jacoco-agent-lib.nbm" downloadsize="504422" homepage="TBD" license="8C5DDE5B" moduleauthor="dbradley" needsrestart="false" releasedate="2019/04/03" targetcluster="dbrad_jacocoverage_suite">
+    <manifest AutoUpdate-Show-In-Client="false" OpenIDE-Module="dbrad.jacoco.agent.lib/1" OpenIDE-Module-Display-Category="Libraries" OpenIDE-Module-Implementation-Version="190403" OpenIDE-Module-Java-Dependencies="Java &gt; 1.7" OpenIDE-Module-Long-Description="The JaCoCo 0.7.9 library. JaCoCo is a free code coverage library for Java, which has been created by the EclEmma team (&lt;a href=&quot;http://www.eclemma.org/jacoco/&quot;&gt;http://www.eclemma.org/jacoco&lt;/a&gt;)." OpenIDE-Module-Name="dbrad-jacoco-agent-ext" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="The JaCoCo agent JAR library" OpenIDE-Module-Specification-Version="0.7.9"/>
+    
+</module>
+
+<module codenamebase="dbrad.jacocoverage.analyzer" distribution="dbrad-jacocoverage-analyzer.nbm" downloadsize="11320" homepage="" license="C4262CBD" moduleauthor="dbradley" needsrestart="true" releasedate="2019/04/03" targetcluster="dbrad_jacocoverage_suite">
+    <manifest AutoUpdate-Show-In-Client="false" OpenIDE-Module="dbrad.jacocoverage.analyzer" OpenIDE-Module-Display-Category="Libraries" OpenIDE-Module-Implementation-Version="190403" OpenIDE-Module-Java-Dependencies="Java &gt; 1.7" OpenIDE-Module-Long-Description="&lt;html&gt;Helper for analysis of JaCoCo report files.&lt;br&gt;&lt;br&gt;Author: Jonathan Lermitage (&lt;a href=&quot;mailto:jonathan.lermitage@gmail.com&quot;&gt;jonathan.lermitage@gmail.com&lt;/a&gt;)&lt;br&gt;GitHub: &lt;a href=&quot;https://github.com/jonathanlermitage/tikione-jacocoverage&quot;&gt;https://github.com/jonathanlermitage/tikione-jacocoverage&lt;/a&gt;&lt;br&gt;Changelog: &lt;a href=&quot;https://github.com/jonathanlermitage/tikione-jacocoverage/blob/master/CHANGELOG.md&quot;&gt;https://github.com/jonathanlermitage/.../CHANGELOG.md&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;/html&gt;" OpenIDE-Module-Module-Dependencies="dbrad.jacoco.agent.lib/1 &gt; 0.7.9, dbrad.jacocoverage.lib/1 &gt; 1.0.0.2017, dbrad.jacocoverage.mgr/1 &gt; 1.0, org.openide.io &gt; 1.49.1" OpenIDE-Module-Name="dbrad-jacocoverage-analyzer" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="Toolkit for JaCoCo report files analysis" OpenIDE-Module-Specification-Version="1.0.0.2017"/>
+    
+</module>
+
+<module codenamebase="dbrad.jacocoverage.mgr" distribution="dbrad-jacocoverage-mgr.nbm" downloadsize="25120" homepage="" license="C4262CBD" moduleauthor="dbradley" needsrestart="true" releasedate="2019/04/03" targetcluster="dbrad_jacocoverage_suite">
+    <manifest AutoUpdate-Show-In-Client="false" OpenIDE-Module="dbrad.jacocoverage.mgr/1" OpenIDE-Module-Display-Category="Libraries" OpenIDE-Module-Implementation-Version="190403" OpenIDE-Module-Java-Dependencies="Java &gt; 1.8" OpenIDE-Module-Long-Description="Provides a common module for management of files, folder and package for dbrad-Jacocoverage processing between UI, execution, analysis and reporting." OpenIDE-Module-Module-Dependencies="dbrad.jacocoverage.lib/1 &gt; 1.0.0.2017, org.netbeans.modules.java.project/1 &gt; 1.66.1, org.netbeans.modules.projectapi/1 &gt; 1.66.1, org.netbeans.modules.projectuiapi.base/1 &gt; 1.85.1.9, org.openide.awt &gt; 7.67.1, org.openide.dialogs &gt; 7.42.1, org.openide.filesystems &gt; 9.10.1, org.openide.io &gt; 1.49.1, org.openide.loaders &gt; 7.66.1, org.openide.nodes &gt; 7.45.1, org.openide.util &gt; 9.7.1, org.openide.util.lookup &gt; 8.33.1, org.openide.util.ui &gt; 9.6.1" OpenIDE-Module-Name="dbrad-jacocoverage-filepackage-mgr" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="dbrad Jacocoverage file and package manager" OpenIDE-Module-Specification-Version="1.0.0.2017"/>
+    
+</module>
+
+<module codenamebase="dbrad.jacocoverage.lib" distribution="dbrad-jacocoverage-lib.nbm" downloadsize="690288" homepage="" license="6CE9EBE4" moduleauthor="dbradley" needsrestart="false" releasedate="2019/04/03" targetcluster="dbrad_jacocoverage_suite">
+    <manifest AutoUpdate-Show-In-Client="false" OpenIDE-Module="dbrad.jacocoverage.lib/1" OpenIDE-Module-Display-Category="Libraries" OpenIDE-Module-Implementation-Version="190403" OpenIDE-Module-Java-Dependencies="Java &gt; 1.7" OpenIDE-Module-Long-Description="&lt;html&gt;Some JaCoCoverage dependencies: Apache Commons IO, Apache Commons Lang, FasterXML Jackson.&lt;/html&gt;" OpenIDE-Module-Name="dbrad-jacocoverage-lib" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="Some dbrad JaCoCoverage dependencies" OpenIDE-Module-Specification-Version="1.0.0.2017"/>
+    
+</module>
+
+</module_group>
+
+<license name="8C5DDE5B" url="licenses/8C5DDE5B.license"/>
+<license name="C7B1B922" url="licenses/C7B1B922.license"/>
+<license name="C4262CBD" url="licenses/C4262CBD.license"/>
+<license name="6CE9EBE4" url="licenses/6CE9EBE4.license"/>
+</module_updates>
+

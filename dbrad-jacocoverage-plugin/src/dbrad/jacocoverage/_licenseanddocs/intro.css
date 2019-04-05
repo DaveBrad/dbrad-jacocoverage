@@ -1,0 +1,45 @@
+/* Copyright (c) 2017 dbradley. */
+
+body {
+  /*font-size: 14pt;*/
+}
+.enhance{
+  padding-left: 1ch;
+}
+.enhance td{
+  vertical-align: top;
+  background-color: rgba(255, 255, 204, 0.8);  
+}
+.enhance td:nth-child(2){
+  border-left: 1px solid;
+  border-left-color: lightgray;
+}
+.enhance tr:nth-child(2) td{
+  border-top: 1px solid;
+  border-top-color: lightgray;
+}
+.enhance ul{
+  margin-top: 0px;
+}
+.enhance td:nth-child(1){
+  width: 21ch;
+}
+
+.spnenh,
+.enhance td span{
+  color: magenta;
+}
+.desccolor{
+  background: magenta;
+  color: white;
+}
+.topictab td:nth-child(2){
+  width:25%;
+}
+
+.divindent{  padding-left: 15px;}
+
+.desctest{
+  font-size: 0.8em;
+  /*margin-left: 4ch;*/
+}

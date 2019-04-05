@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2017 dbradley. All rights reserved.
+-->
+<html>
+    <head>
+        <title>dbrad-jacocoverage functional test design</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./Functional_test_design.css">
+    </head>
+    <body>
+        <div class="indentp">
+            <h3>dbrad-jacocoverage functional test design</h3>
+            <p>The functional tests of dbrad-jacocoverage are meant to run the GUI
+                project properties and thus dbrad-jacocoverage settings. The tests
+                are limited to dbrad-jacocoverage; implying that jacocoagent is not part of the testing.</p>
+            <p>For the functional test to run on a GUI they need to execute in sequence. Utility 
+                classes have been implemented to allow managed execution of test-cases in
+                sequential order. (See <a href="#codingtc">Coding test case classes</a>).</p>
+        </div>
+        <div class="indentp">
+            <h4>Run test</h4>
+            <p>Tests are menu/ant invoked from within <code>packg.testcases</code>. 
+            </p>
+            <p><code>A_RunnerOfAllTest.java</code> is a special class to cause all the
+                test-cases to be invoked and run within the same GUI suite run.
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;(Note: 'A_' causes the class to display at the top of the folder listing.)</p>
+            <p>The other 'test' classes represent functional test areas or zones.</p>
+            <p>Tests use Netbeans' test harness  via Netbeans GUI classes
+                JellyTestCase, NBModuleSuite and Jemmy capabilities. Additionally, a 3rd-party library
+                is incorporated to deal with multiple test verification data points (ObjectTestData).</p>
+        </div>
+        <div class="indentp">
+            <h3>Folder Structure</h3>
+            <p>FUNCTIONAL TEST CODE HAS BEEN PLACED IN THE <B>UNIT</b> TESTING STRUCTURE. This is
+                due to a Netbeans issue in invoking the "QA-FUNCTIONAL" testing structure from within
+                the IDE. The issue centers around the ease of use to execute functional tests,
+                versus unit tests and the Netbeans architecture for testing. [Many module projects
+                do not perform qa-functional testing of their module as the architecture issue (IMHO) 
+                is lacking in good integration.]</p>
+            <p>The Netbeans <b>Unit Test Packages</b> folders of
+                dbrad-jacocoverage-plugin represent components to support the functional
+                testing or are the tests, or data for tests.
+
+            <ul> 
+                <li>All files are accessible via <span class="pv">Unit Test Packages</span> 
+                    (<span class="sm">project-view</span>), or
+                    <span class="fv">test/unit</span> (<span class="sm">files-view</span>).
+                </li>
+                <li>
+
+
+
+
+                    Test cases are in folders for:<br>
+
+                    <table class='tcfoldertable'>
+                        <tr>
+                            <td>unit:</td>
+                            <td><i><code><b><span class="fv">src.</span><span class="pv">packg.testcases</span></b></code>
+                                </i> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>functional:</td>
+                            <td><i><code><b><span class="fv">src.</span><span class="pv">packg.func.testcases</span></b></code>
+                                </i>  
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>..</td>
+                            <td>all other folders are supporting entities/component classes
+                                for the test-cases</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>All folders
+                    <dl class="srccode">
+                        <dt><span class="fv">/data</span></dt>
+                        <dd><p>Files that are Netbeans test project models for the testing
+                                to be performed with.</dd>
+
+                        <dt><span class="fv">/lib3party</span></dt>
+                        <dd><p>Folder that holds any external library JAR files needed for
+                                the functional tests. (e.g. objecttestdata_19_1.jar).</dd>
+
+                        <dt><span class="fv">/src</span><span class="pv">/_documentation</span></dt>
+                        <dd><p>This documentation and other documentation of note.</dd>
+
+                        <dt><span class="fv">/src</span><span class="pv">/packg/appfunc</span></dt>
+                        <dd><p>Classes that represent functional GUI actions and data access
+                                of the dbrad-jacocoverage interface. The intent is to support
+                                actions and verification actions (settings) of the various
+                                GUI components.
+                            <p>Each class represents related components of the GUI.
+                            <dl>
+                                <dt><span class="pv">/otdextensions</span></dt>
+                                <dd><p>Otd-sub-class-extensions that use the ObjectTestData 
+                                        aid for creating
+                                        test data at runtime and handling many data elements.</dd>
+                            </dl>
+                        </dd>
+
+                        <dt><span class="fv">/src</span><span class="pv">/packg/testcases</span></dt>
+                        <dd><p>Package for the test-case-classes.</dd>
+
+                        <dt><span class="fv">/src</span><span class="pv">/packg/testdataclasses</span></dt>
+                        <dd><p>Holds automatically code generated classes that are
+                                object-test-data objects for test verification points as
+                                expected data versus rerun actual data. This 
+                                requires the ObjectTestData test aid
+                                which is an external library for testing only.</dd>
+
+                        <dt><span class="fv">/src</span><span class="pv">/packg/zoperation</span></dt>
+                        <dd><p>Classes that allow the test cases to be managed and run within
+                                the dbrad-jacocoverage qa=-functional environment 
+                                while cleanly interacting with Jelly, Jemmy and
+                                NBModuleSuite testing frameworks.
+
+                            <dl>
+                                <dt><span class="pv">/ann</span></dt>
+                                <dd><p>Annotation classes for applying against
+                                        test-case-classes and test-case-methods so
+                                        as to support the management/ordering of
+                                        suite execution.
+                                </dd>
+                                <dt><span class="pv">/tstenv</span></dt>
+                                <dd><p>Classes for management and organization processing.
+                                </dd>
+
+                            </dl>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+
+        <div class="indentp">
+            <h3><a id="codingtc">Coding test case classes</a></h3>
+            <p>The NBModuleSuite class provides a means to run test-case-methods in a class
+                sequentially, as is typical of GUI functional testing. If the number of tests
+                are few then its easy to manually set-up [Netbeans.org documentation is available
+                and clearly explains how-to]. 
+            <p class="additonindent">However, for a significant number of 
+                test-cases the setup is involved and prone to errors. Additionally, when adding 
+                more test-case-methods the methods have to be added manually.</p>
+            <p class="additonindent">
+                So annotation and management code is provided to simplify the 
+                automatic processing of test-case-methods and classes into to a list of
+                sequential classes and methods which are then provided to a NBModuleSuite instance
+                for execution.</p>
+            <p>For more managed test case execution (as done for dbrad-jacocoverage) some
+                structure is required to be overlayed onto the test-case scripts. This is
+                achieved by the use of local annotations <code>@JacocoTestClass</code>, 
+                <code>@JacocoTest</code> and <code>@JacocoCloser</code> to create the sequential associations
+                between classes and methods.</p>
+            <p>This association is calculated for run-execution when 'test' is invoked on the class 
+                <code>A_RunnerOfAllTest.java</code>. Or a reduced calculation on another test-case
+                class for a single test-class execution. (If the annotations are not set correctly
+                the functional testing will be a mess.)</p>
+            <p>Below is a table showing the use of the @Jacocommmm annotations to
+                associate classes, methods for sequential execution.
+            <table class="layoutstruct">
+                <tr><td colspan="2"><pre>
+ <span>@JacocoTestClass</span>
+ public class ClassA{.......
+                        </pre></td>
+                    <td>Base/first test class in the sequence (1st class)</td></tr>
+                <tr><td></td><td><pre>
+   <span>@JacocoTestMethod</span>
+   public void methodA1()........
+                        </pre></td>
+                    <td>1st test-case method within the class</td></tr>
+                <tr><td></td><td><pre>
+   <span>@JacocoTestMethod (dependsOn = "methodA1")</span>
+   public void methodA2()........
+                        </pre></td>
+                    <td>next test-case method (2nd)</td></tr>
+                <tr><td></td><td><pre>
+   <span>@JacocoTestMethod (dependsOn = "methodA2")</span>
+   public void methodA3()........
+                        </pre></td>
+                    <td>next test-case method (3rd)</td></tr>
+                <tr><td></td><td><pre>
+   <span>@JacocoTestMethod (dependsOn = "methodA3")</span>
+   public void methodA4()........
+                        </pre></td>
+                    <td>next test-case method (4th)</td></tr>
+                <tr><td></td><td><pre>
+   <span>@JacocoCloser</span>
+   public void methodCloser()........
+                        </pre></td>
+                    <td><i><b>optional</b></i> method that will be the last method in the test-classes
+                        method sequence, allowing the test-case-class to close off any resources.</td></tr>
+                <tr><td colspan="2"><pre>
+ }
+                        </pre></td><td></td></tr>
+                <tr><td colspan="2"><pre>
+<span>@JacocoTestClass (dependsOnClass = ClassA.class)</span>
+ public class ClassB{.......
+                        </pre></td>
+                    <td>Next class in sequence (2nd class)</td></tr>
+                <tr><td></td><td><pre>
+   <span>@JacocoTestMethod</span>
+   public void methodA1()........
+                        </pre></td>
+                    <td>1st test-case method</td></tr>
+                <tr><td></td><td><pre>
+   <span>@JacocoTestMethod (dependsOn = "methodB1")</span>
+   public void methodB2()........
+                        </pre></td>
+                    <td>next test-case method (2nd) </td></tr>
+                <tr><td></td><td><pre>
+   <span>@JacocoTestMethod (dependsOn = "methodB2")</span>
+   public void methodB3()........
+                        </pre></td>
+                    <td>next test-case method (3rd)</td></tr>
+                <tr><td></td><td><pre>
+   <span>@JacocoTestMethod (dependsOn = "methodB3")</span>
+   public void methodB4()........
+                        </pre></td>
+                    <td>next test-case method (4th)</td></tr>
+                <tr><td></td><td><pre>
+   <span>@JacocoTestMethod (dependsOn = "methodB4")</span>
+   public void methodB5()........
+                        </pre></td>
+                    <td>next test-case method (5th)</td></tr>
+                <tr><td></td><td><pre>
+   <span>@JacocoTestMethod (dependsOn = "methodB5")</span>
+   public void methodB6()........
+                        </pre></td>
+                    <td>next test-case method (6th)</td>
+                </tr><tr><td colspan="2"><pre>
+ }
+                        </pre></td><td></td></tr>
+                <tr><td colspan="2"><pre>
+ <span>@JacocoTestClass (dependsOnClass = ClassB.class)</span>
+ public class ClassC{.......
+                        </pre></td>
+                    <td>Next class in sequence (3rd class)</td>
+                </tr>
+                <tr><td></td><td><pre>
+       :</pre></td>
+                    <td></td>
+                </tr>
+                <tr><td>&nbsp;&nbsp;&nbsp;</td><td><pre>
+       :</pre></td>
+                    <td></td></tr>
+            </table>
+        </div>   
+
+        <div class="indentp codetable">
+            <h4>Overlay structure for managed execution</h4>
+            <p>The following table shows an example test-case class and how it needs to
+                be coded to be managed in the dbrad-jacocoverage functional testing environment.
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span>Hi-lite</span> code reflects overlay requirements.</p>
+            <table>
+                <tr><td><pre>
+<span>@JacocoTestClass(dependsOnClass = SingleSE.class)</span></pre></td>
+                    <td>Annotation that causes sequential processing of functional test
+                        cases one after the other.<br>(The starting class is set <code>@JacocoTestClass</code> only.)</td>
+                </tr>
+                <tr>
+                    <td><pre>
+public class AssociateSE extends DbradJacocoJellyTestCase {
+
+ public static Test suite() {
+  <span>return A_RunnerOfAllTest.runAsSingleSuite();</span>
+ }</pre></td>
+                    <td>The test-case extends <code>DbradJacocoJellyTestCase</code> (which
+                        <code>extends JellyTestCase</code>) provides 
+                        a test-case JUnit structure for test execution.
+
+                        <p>IMPORTANT:<br> 
+                            <code>A_RunnerOfAllTest.runAsSingleSuite()</code> provides
+                            the ability to run this class by itself (as if a suite).</td>
+                </tr>
+                <tr><td><pre>
+ // - - - -  objects created and for use by following 
+ //          sequential testcases
+ static PrepareProject prepareProject;
+ static FuncProjectProperties fcPP;
+                        </pre></td>
+                    <td>Static variables that are used across test-case methods.</td>
+                </tr>
+                <tr><td><pre>
+ public AssociateSE(String testName) {
+  super(testName);
+ }</pre></td>
+                    <td>Normal test-class constructor method for
+                        <code>extends DbradJacocoJellyTestCase</code>
+                         (which <code>extends JellyTestCase</code>).</td>
+                </tr>
+                <tr><td><pre>
+ <span>@JacocoTest</span>
+ public void prepareLaunchIde() {
+
+  <span>prepareProject = new PrepareProject();</span>
+
+  // jelly-test-case, root-model, associated projects
+  fcPP = <span>prepareProject.openProjects</span>(this, JavaTestModelWithDependents,
+            JavaTestModelWithDependents_7,
+            JavaTestModelWithDependents_6,
+            JavaTestModelWithDependents_5,
+            JavaTestModelWithDependents_4,
+            JavaTestModelWithDependents_3,
+            JavaTestModelWithDependents_2,
+            JavaTestModelWithDependents_1);
+          
+  if (packageFilterTableOtd == null) {
+   String myClassName = getClass().getSimpleName();
+
+   packageFilterTableOtd = new TableOtd(fcPP,
+    _OtddataClass.sourceDir(), 
+    _OtddataClass.packageString(),
+    myClassName + "TD");
+  }
+ }
+                        </pre></td>
+                    <td>
+                        <code>@JacocoTest</code> is like @Test for other testing frameworks and defines this as the
+                        1st method to invoke.<br><br>
+                        <p><code>PrepareProject</code> utility will allow test-model projects to be opened via the
+                            projects-view in preparation to running the test-cases following.</p>
+                        <br><br><br><br><br><br>
+                        <p>Arrangement for test data class identification of the
+                            ObjectTestData test aid library. (See
+                            <a href='#otdsection'>About ObjectTestData</a>.)</p>
+
+                        <p>Hard-coded equivalent would be:</p>
+                        <pre>
+  if (packageFilterTableOtd == null) {
+   String sourceDir = prepareProject.getSourceDir4TestQaFunctional();
+
+   packageFilterTableOtd = new PackageFilterTableOtd(fcPP, 
+       sourceDir, 
+       "packg.testdataclasses", 
+       "AssociateSeTD");
+  }
+                        </pre>
+                    </td>
+                </tr>
+                <tr><td><pre>
+ <span>@JacocoTest(dependsOn = "prepareLaunchIde")</span>
+ public void changeToProjectSpecific() {
+  // change to project specific
+  fcPP.radioProjectSpecific().clickMouse();
+
+  pauseMs(1000);
+
+  // buttons are changed
+  assertEquals(false, fcPP.radioGlobal().isSelected());
+  assertEquals(true, fcPP.radioProjectSpecific().isSelected());
+ }</pre></td>
+                    <td><code>@JacocoTestMethod (dependsOn = "prepareLaunchIde")</code> 
+                        is like @Test for other testing frameworks but makes this method to run in sequence
+                        after test-case method <code>prepareLaunchIde</code>.
+                        <p>Performs the test using Jelly or Jemmy.</p></td>
+                </tr>
+                <tr><td><pre>
+ <span>@JacocoTest(dependsOn = "changeToProjectSpecific")</span>
+ public void associatedProjectEnabled() {
+    ::::
+ }</pre></td>
+                    <td>The next test-case method in the sequence, as set 
+                        by the <code>@JacocoTestMethod (dependsOn =.....)</code>.</td>
+                </tr>
+                <tr>
+                    <td><pre>
+ <span>@JacocoTest(dependsOn = "associatedProjectEnabled")</span>
+ public void processAssociatedProjects() {
+    ::::
+ }
+}</pre></td>
+                    <td>The next test-case method in the sequence, as set 
+                        by the <code>@JacocoTestMethod (dependsOn =.....)</code>.</td>
+                </tr>
+            </table>
+        </div>
+        <div class="indentp">
+            <h4 id='projectsetup'>dbrad-jacocoverage Project Setup</h4>
+            <p>The functional test-case classes use an external testing library (object-test-data) which
+                has sub-class-extensions (packg/otd) built explicitly for extracting verification points
+                of data and storing the verification points as Java class files (packg/otdTDClasses).
+                Object-test-data (OTD) is a library that captures data points, automatically code generates
+                test-data Java class files and then reuses the classes at runtime to test against.
+            </p>
+            <p>How OTD works is not covered here, other than to say it deals with massive 
+                numbers of verification points of data in an automatic manner. It also provides
+                Java code that can be changed by a user to reflect changes in design and its impact
+                on the test-data.</p>
+            <p>Using the OTD library requires that it be installed as a 3rd-party library. Supposedly
+                <br><br>&nbsp;&nbsp;&nbsp;
+                <u><code>nbproject/project.properties</code></u> => <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <code>test.unit.cp.extra=test/unit/lib3party/objecttestdata_19_1.jar</code><br><br>
+                should allow 3rd-party JARs to be used. However, it only does compile management and
+                not runtime. (Also, supposedly <code>test.unit.run.cp.extra</code> should work,
+                but does not appear to.)
+            </p>
+            <p>So the following "hack" is implemented to load the 3rd-party JAR for 
+                dbrad-jacocoverage functional testing.</p>
+            <table class="tablesetup">
+                <tr>
+                    <th>File or structure of<br>dbrad-jacocoverage-plugin</th>
+                    <th>code in Netbeans files</th>
+                </tr>
+                <tr><td>nbproject/project.properties</td>
+                    <td><pre>
+test.unit.cp.extra=test/unit/lib3party/objecttestdata_19_1.jar
+test.unit.lib.3rd.party=test/unit/lib3party</pre></td>
+                </tr>
+                <tr><td>build.xml</td>
+                    <td><pre>
+&lt;!--    assume a unit test (can be changed) if the test.type is not set
+ as is the case when 'test' is selected from the dbrad-jacocoverage-plugin
+ project context menu 
+ --&gt;
+ &lt;target name="test-preinit-default" unless="test.type"&gt;
+  &lt;!-- information for the console --&gt;
+  &lt;echo message=" applying defaults:" /&gt;
+        
+  &lt;!--      
+   'test' at the project context-menu does not assign a 'test.type' so the
+   testing request becomes floating and an ANT error occurs.
+   Also:
+   test.unit.cp.extra does not appear to work, that is, copy class files into the 
+   unit/classes directory 
+        
+   the other alternative Netbeans testing directory 'qa-functional' cannot be 
+   invoked via the 'test' project context-menu
+   THUS
+   for dbrad-jacocoverage the functional and unit tests are both placed into
+   the UNIT tests structure/arrangement
+
+   by setting this unit, files ending in Test will be executed
+   --&gt;
+  &lt;property name="test.type" value="unit"/&gt;
+  &lt;echo message="   test.type: ${test.type}" /&gt;    
+ &lt;/target&gt;
+   
+ &lt;target name="test-preinit" depends="test-preinit-default" if="test.type"&gt;
+  &lt;echo message="   continue.after.failing.tests: ${continue.after.failing.tests}" /&gt;
+  &lt;!--      
+   test.unit.cp.extra does not appear to work, that is, copy class files into the 
+   unit/classes directory
+        
+   the following will process all the jar files from
+       test.unit.lib.3rd.party=test/unit/lib3party 
+   into 
+       unit/classes
+   in an expanded format. 
+        
+   Adding more jars needs to change settings in project.properties for
+      test.unit.cp.extra=test/unit/lib3party/objecttestdata_19_1.jar
+   to 
+      test.unit.cp.extra=test/unit/lib3party/ANOTHER.jar:test/unit/lib3party/objecttestdata_19_1.jar
+                                       - - - - - - - - - - - - - - - - - - - - - - 
+        
+   This approach is a hack as Netbeans has issues in its testing architecture.
+        
+   replace 'unit' with 'qa-functional' in the property name to make this work for
+   qa-functional testing folders (warning: 'test' in project context-menu does not work
+   for a qa-functional structure [another issue for Netbeans])
+  --&gt;
+   
+  &lt;macrodef name="test-3rd-party"&gt;
+   &lt;attribute name="test.type"/&gt;
+   &lt;attribute name="build.classes.dir"/&gt;
+    &lt;sequential&gt;
+     &lt;echo message=" process the 3rd-party library JARs: expand and copy"/&gt;
+     &lt;property name="lib3rdparty.dir" location="${test.@{test.type}.lib.3rd.party}"/&gt;
+     &lt;property name="build.test.mnmnmn.classes.dir" location="@{build.classes.dir}"/&gt;
+
+     &lt;unzip dest="${build.test.mnmnmn.classes.dir}"&gt;
+      &lt;fileset dir="${lib3rdparty.dir}"&gt;
+       &lt;include name="*.jar" /&gt;
+      &lt;/fileset&gt;    
+     &lt;/unzip&gt;
+        
+    &lt;/sequential&gt;
+   &lt;/macrodef&gt;
+        
+   &lt;echo message="test type setting: ${test.type}"/&gt; 
+   &lt;echo message="test includes setting: ${test.includes}"/&gt; 
+        
+   &lt;test-3rd-party test.type="${test.type}" 
+      build.classes.dir="build/test/${test.type}/classes" /&gt;
+ &lt;/target&gt;</pre></td></tr>
+                <tr>
+                    <td>test/unit/lib3party</td>
+                    <td><i>copy the jar library file(s) to this location</i></td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <h3 id='otdsection'>About ObjectTestData</h3>
+            <p>ObjectTestData is a 3rd-party library which allows gathering/capture/reuse
+                of verification data points within a test-case-method execution. The
+                data points are code-generated at runtime into reusable Java code
+                files as a 'database' of data points, then reused for any following
+                test-method executions and used to verify the data is the same.</p>
+            <p>Special setup was needed to allow the 3rd-party library to be installed (see
+                <a href='#projectsetup'>dbrad-jacocoverage Project Setup</a>).</p>
+            <p>For dbrad-jacocoverage functional testing the generated files are
+                stored into the 'test/unit/packg/testdataclasses' package
+                of the test source code folder. dbrad-jacocoverage uses a special
+                class <code>_OtddataClass</code> installed in the testdataclasses
+                package to support the following code:</p>
+            <pre>
+  if (packageFilterTableOtd == null) {
+   String myClassName = getClass().getSimpleName();
+
+   packageFilterTableOtd = new TableOtd(fcPP,
+    _OtddataClass.sourceDir(), 
+    _OtddataClass.packageString(),
+    myClassName + "TD");
+  }              
+            </pre>
+            <p>OTHERWISE: the lines need to be hand-coded for the <code>SourceDir</code> and
+                <code>packageString</code> parameters.</p>
+            <p>The <code>myClassName + "TD"</code> will be the name of the test-case class
+                being executed, thus making the test-data OTD class/file unique
+                to a class-name. [Basically, the above may be cut and paste
+                for each test-case class in the dbrad-jacocoverage functional
+                test environment.]</p>
+
+            <table class='codetable'>
+                <tr><td><pre>
+ package packg.testdataclasses;
+ :::
+  public class _OtddataClass {
+
+   static private String sourceDir4TestQaFunctional = null;
+
+   _OtddataClass() {
+   }               
+                        </pre></td>
+                    <td>The package setting is where all other test-data
+                        OTD files will be stored. The source-dir will be the
+                        test source-code file path and determined once.</td>
+                </tr>
+                <tr><td><pre> :::           
+   static public String packageString() {
+    return _OtddataClass.class.getPackage().getName();
+   }</pre></td>
+                    <td>The package that the test-data OTD classes
+                        will be associated with as a classpath context. This
+                        is also used to appended to the source directory.</td>
+                </tr>
+                <tr><td><pre> :::
+   static public String sourceDir() {
+    if (sourceDir4TestQaFunctional == null) {
+     String thisClassRuntime = _OtddataClass.class.getProtectionDomain()
+                                   .getCodeSource().getLocation().getPath();
+
+     // convert to the test/unit/src directory
+     // this structure appears to be fixed, but if it changes then things will
+     // fail
+     thisClassRuntime = thisClassRuntime.replace("/build/", "/");
+     sourceDir4TestQaFunctional = thisClassRuntime.replace("/classes", "/src");
+    }
+    return sourceDir4TestQaFunctional;
+   }</pre></td>
+                    <td>The source-directory is where the test-data OTD files
+                        will be created into, compiled from and other
+                        things that OTD supports.
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+    </body>
+</html>

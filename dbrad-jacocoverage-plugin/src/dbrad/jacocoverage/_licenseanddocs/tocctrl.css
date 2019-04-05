@@ -1,0 +1,133 @@
+/* Copyright (c) 2017 dbradley. */
+
+/**
+* Numbered headings arrangement and TOC numbered lines that are synced
+* for headings h1-h6. 
+*
+* Requires the tocctrl.js javascript file to create the TOC HTML onload.
+*/
+.bodywithtoc{
+
+}
+.bodywithtoc {counter-reset: h1; 
+              /*counter-reset: tth1tt;  causes weird values for h1, moved to its own class */
+}
+/* found via goggle in many places, and has been reused */
+h1 {counter-reset: h2; font-size: 14pt;}
+h2 {counter-reset: h3; font-size: 14pt;}
+h3 {counter-reset: h4; font-size: 13pt;}
+h4 {counter-reset: h5; font-size: 13pt;}
+h5 {counter-reset: h6; font-size: 13pt;}
+h6 {font-size: 13pt;}
+
+h1:before{counter-increment: h1; content: counter(h1) ". "}
+h2:before{counter-increment: h2; content: counter(h1) "." counter(h2) ". "}
+h3:before{counter-increment: h3; content: counter(h1) "." counter(h2) "." counter(h3) ". "}
+h4:before{counter-increment: h4; content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) ". "}
+h5:before{counter-increment: h5; content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". "}
+h6:before{counter-increment: h6; content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "}
+
+/* orginal code by author to do numbered headings within a TOC that
+* sync with the document content. Not found anywhere else on the net.
+*/
+.toclist{counter-reset: tth1tt;}
+.toclist h1  {counter-reset: tth2tt; margin: 0px 0px 0px 0px;}
+.toclist h2  {counter-reset: tth3tt; margin: 0px 0px 0px 1ch;}
+.toclist h3  {counter-reset: tth4tt; margin: 0px 0px 0px 2ch;}
+.toclist h4  {counter-reset: tth5tt; margin: 0px 0px 0px 3ch;}
+.toclist h5  {counter-reset: tth6tt; margin: 0px 0px 0px 4ch;}
+.toclist h6  {margin: 0px 0px 0px 5ch;}
+
+.buttTOC,
+.toclist h1,
+.toclist h2,
+.toclist h3,
+.toclist h4,
+.toclist h5,
+.toclist h6{
+  font-size: 12pt;
+  font-weight: normal;
+  font-style: italic;
+  font-family: arial;
+}
+
+/*
+* Any thing in the TOC div is format as the following
+*/
+.toclist h1:before {counter-increment: tth1tt; content: counter(tth1tt) ". "}
+.toclist h2:before {counter-increment: tth2tt; content: counter(tth1tt) "." counter(tth2tt) ". "}
+.toclist h3:before {counter-increment: tth3tt; content: counter(tth1tt) "." counter(tth2tt) "." counter(tth3tt) ". "}
+.toclist h4:before {counter-increment: tth4tt; content: counter(tth1tt) "." counter(tth2tt) "." counter(tth3tt) "." counter(tth4tt) ". "}
+.toclist h5:before {counter-increment: tth5tt; content: counter(tth1tt) "." counter(tth2tt) "." counter(tth3tt) "." counter(tth4tt) "." counter(tth5tt) ". "}
+.toclist h6:before {counter-increment: tth6tt; content: counter(tth1tt) "." counter(tth2tt) "." counter(tth3tt) "." counter(tth4tt) "." counter(tth5tt) "." counter(tth6tt) ". "}
+
+.toclist h1,
+.toclist h2,
+.toclist h3,
+.toclist h4,
+.toclist h5,
+.toclist h6{
+  margin-bottom: 0px;
+}
+.toclist p{
+  font-size: 9pt;
+  font-family: sans-serif;
+  margin: 0px 0px 0px 15ch;
+}
+/* to add an item to the TOC  (restricted to tag <p class='toc'>xxxxx</p>)*/
+.toc{
+  /* include in to table of contents */
+}
+
+.toc1stoll{
+  margin-top: 0px;
+  margin-left: 2ch;
+}
+.toclist ol{padding-left: 1.5ch;}
+img{
+  margin-left: 5px;
+}
+
+.buttTOC{
+  border: 1px solid white;
+  background-color: white;
+}
+
+.tochilite{
+  color: magenta;
+}
+.toclist{
+  padding-left: 2ch;
+}
+
+.toclist .tocindent2{
+  padding-left: 2ch;
+}
+/*99*/
+.toclist .tocindent3{
+  padding-left: 4ch;
+}
+.toclist .tocindent4{
+  padding-left: 6ch;
+}
+
+.toclist .tocindent5{
+  padding-left: 8ch;
+}
+
+.bottomfixed{
+  /* class to label any items at bottom of page that will overlap
+  the TOC content when attempting to scroll the bottom TOC items
+  into view */
+}
+
+/* the end of doc needs to placed into focus for accessibility. */
+.endofdoc{
+  border-color: white;
+}
+.endofdoc:focus{
+  border-color: white;
+  outline: white;
+  outline-width: 2px;
+}
+

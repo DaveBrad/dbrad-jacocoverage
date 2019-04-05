@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2017 dbradley. -->
+<html>
+  <head>
+    <title>dbrad-jacocoverage project specific settings</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="docparts.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="prjspec.css">
+    <script src="prjspec.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="tocctrl.css">
+    <script src="tocctrl.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="gifplayer.css">
+    <script src="gifplayer.js"></script>
+
+    <script src="prjspec.js"></script>
+  </head>
+  <body onload="applyDocIndex(); applyTOC(); applyGifPlayer(); onloadSetImageDivs();"> 
+    <div class='bodywithtoc'>
+      <h1 id='topprjspcctnt'>Project specific content</h1>
+      <div class="divindent">
+        <p>Description of project-specific settings tabbed pane, and contents of, when
+          selected in a principle-project's project-properties &gt; JaCoCoverage-dbrad
+          dialog. A principle-project is displayed in the
+          IDEs project/file-view and is the item selected.</p>
+        <p>Project specific settings is basically creating a
+          singular-pseudo-profile for a specific principle-project. Any changes to the
+          settings affects and changes the profile explicitly.
+        </p>
+        <div class="divindent">
+          <p>dbrad-jacocoverage is a category of a principle projects project-properties dialog with its own settings pane.
+          </p>
+          <p>NOTE: settings pane is wider/taller than the average category<br>
+            <span style='margin-left: 10ch;'>ENSURE TO RESIZE</span>, to see all fields
+          </p>
+        </div>
+        <div id="docindexcpyrght">
+        </div>
+
+        <!-- table of content -->
+        <h2 id='tocid'>Table of contents</h2>
+        <div id="tocmaindiv" class="toclist">
+        </div>
+      </div>
+      <h1 id="introid">Introduction</h1>
+      <div class="divindent">
+        <p><b>Project specific</b> is set explicitly on a principle-project
+          (users choice) and its settings will override any dbrad-jacocoverage 
+          IDE <a href="./global.html" >global settings</a>. Initial
+          settings are inherited from the global settings, or
+          from preserved settings (on-record in the config-directory). The latter
+          preservation occurs if a user switches between project-specific &amp;
+          global settings, then back to project-settings.
+        </p>
+        <p style='margin-bottom: 0px;'>Project-specific settings allow:
+        <ul style='margin-top: 0px;'>
+          <li>Coverage setting:
+            <ul style='margin-top: 0px;margin-bottom: 0px;'>
+              <li>For <b>src</b> and/or <b>test</b>  Netbeans by project-folders, by packages.</li>
+              <li>Additional packages: associated Netbeans projects, jar files (no source).
+                <p style='margin-bottom: 0px;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                  - Associated Netbeans projects are depends-on library 
+                  projects or in Netbeans terms sub-projects.</li>
+            </ul>
+          </li>
+          <li>Excludes setting:
+            <ul style='margin-top: 0px;margin-bottom: 0px;'>
+              <li>User defined exclude package(s).</li>
+              <li>Exclusion of  testing frameworks (For example: <i>org.junit</i>, 
+                <i>org.testng</i>).</li>
+            </ul>
+          </li>
+          <li>Report control:
+            <ul style='margin-top: 0px;'>
+              <li>By-project or by-grouped/bundled reporting layout.</li>
+              <li>Project(s) and folder(s) reporting.</li>
+              <li>User-defined-directory for reports to be stored to, versus 
+                default directory.</li>
+              <li>Time-stamped reports.</li>
+              <li>Retention of N previous reports.</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id='setasprjspec'>Set as project specific</h2>
+        <div class="divindent">
+          <p>Set in a project's project-properties dialog:&nbsp;&nbsp;&nbsp;&nbsp;
+            <i>{project/file-view right click}</i> &gt; <b>properties</b>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp; Select from the categories tree <b>JaCoCoverage-dbrad</b>
+          </p>
+          <img src='./imgs/prjprop_select_jacdbrad.png' alt="missing image">
+          <h3 id="configure">Configure setting</h3>
+          <p>A dialog MAY pop up to inform the user that a 'JaCoCoverage configuration'
+            is required/outdated/invalid. Just select <b>OK</b>. This creates a 
+            '.jacocodbrad' folder in a principle-project's root-directory which
+            is advised to be set ignored for any 
+            source-code-manager/version-control-source systems.</p>
+          <img class="imgpopup" src="./imgs/prjpropdlg.png" alt="missing">
+          <p id='setprjid'>Set as <b>project specific</b> setting by selecting the
+            appropriate radio button</p>
+          <img class="imgradiobutt" src="./imgs/prjpropinitdlg.png"  alt="missing">
+        </div>
+      </div>
+      <h1 id='prjsetngsid'>Project specific dialog</h1>
+      <div class="divindent">
+        <p>There are two kinds of representations, as per the principle-projet kind:</p>
+        <table class="prjspctab">
+          <tr>
+            <td class='percenttab'><table>
+                <tr>
+                  <td class="prjspcdlgtableft">1. "Single principle-project": 
+                    <b>Associate projects</b> tab is grayed out.
+                    <br><br>
+                    <img class="img75perc imgbord" 
+                         src="./imgs/prjpropsngldelta.png" alt="missing">
+                  <br><br><td>
+                </tr>
+                <tr>
+                  <td class="prjspcdlgtableft">2. "Principle-project with dependent projects"
+                    (Multiple-project): <b>Associate projects</b> tab is black text for dependent 
+                    associate/sub-project libraries.
+                    <br><br>
+                  <img class="img75perc imgbord" src="./imgs/prjpropmltidelta.png" alt="missing" ><td>
+                </tr>
+              </table>
+            </td>
+            <td class="prjspcdlgtabright">
+              <div><p>Project specific display with the 
+                  <b>General</b> tab showing is the same for either kind of project 
+                  representation.</p>
+                <img class="img50perc imgbord" src="./imgs/general_tab.png" alt="missing" >
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h1 id="tabbpaneid">Tabbed pane of project specific</h1>
+      <div class="divindent">
+        <p>All projects (single or multiple) share the same tabs and settings
+          apply equally. The tabs represent settings for features/capabilities that are
+          applied for any code coverage requests.
+          Settings are preserved in the <i>{project}/.jacocodbrad</i> 
+          directory of a principle-project, so the settings are reused for
+          every code coverage run. Only a single active pseudo-profile is supported at
+          a time.</p>
+        <p class="noteindent">NOTE: changing settings manually in any
+          <i>{project}/.jacocodbrad}</i> files may result in unpredictable
+          behavior, or exceptions.</p>
+        <div class="divindent">
+          <p id='prjspecparts' class='toc'>Project specific parts</p>
+          <table class='zonekinds'>
+            <tr>
+              <td>
+                <p>There are two parts to the settings when in the project 
+                  specific panel: </p>
+                <ol >
+                  <li>include pattern(s):
+                    <p>Shows  includes packages used for the 
+                      jacocoagent code coverage request. This field is calculated 
+                      as per settings set in tabbed pane fields. (The pattern is
+                      not edit-able and is information only.)
+                    <br><br></li>
+
+                  <li>tabbed pane:
+                    <p> The tab pane provides dialogs for report management and 
+                      package filter settings which will alter the include and 
+                      exclude package filters.</p>
+                  </li>
+                </ol>
+              </td>
+              <td><img class="img75perc imgbord" src="./imgs/prjpropmltidelta.png" alt="missing" ></td>
+            </tr>
+          </table>
+        </div>
+
+        <h2 id="inclinfoid">Include pattern(s) information field</h2>
+        <div class="divindent">
+          <p>Displays the includes packages pattern(s) that
+            the code coverage will collect data for. The field is calculated
+            from settings in the '<i>{project}</i>' &amp; 'Associated projects' tabs.
+          </p>
+          <p>Settings in the "Exclude packages" tab will not be 
+            included/applied in the information field as 
+            the excludes are applied 'after' code coverage capture.
+          </p>
+        </div>
+
+        <h2 id="tabbedp2id">Tabbed pane explanation</h2>
+        <div class="divindent">
+          <h3 id="gentabid">General tab</h3>
+          <div class="divindent">
+            <p>This tab has the same settings as global dbrad-jacocoverage
+              IDE settings along with additional capability. The project-specific
+              settings will override<br>
+              &nbsp;&nbsp;&nbsp;global IDE settings at &nbsp;&nbsp;
+              <i><b>Tools &gt; Options &gt; Java &gt; jacocoverage-dbrad </b></i></p>
+            <p>The same settings as the global-settings exist, but have
+              expanded the scope of capability.</p>
+
+            <div class="pandul">
+              <p>Other settings activate additional capabilities to:
+              <ul  style='margin-top: 0;'>
+                <li>Report layout type:
+                  <ul  style='margin-top: 0;'>
+                    <li>By-project: reports each project as independent with
+                      packages and classes within
+                    <li>By-grouped/bundles: reports all packages a classes
+                      in a single report
+                  </ul>
+                <li>Store reports to user defined 
+                  directory (to-location operational management) 
+                <li>Store reports as time-stamped
+                  files/directories (operational management) 
+                  <ul>
+                    <li>retain N versions of time-stamped reports in storage
+                  </ul>
+              </ul>
+            </div>
+
+            <div class="maindiv">
+              <div>
+                <img src="./imgs/gentab_specific.png" alt="missing image">
+              </div>
+              <!-- zone on the image -->
+              <div class="buttimg enblhi"></div>
+              <div class="buttimg enblmlthi"></div>
+              <div class="buttimg byprj"></div>
+              <div class="buttimg bygrpbun"></div>
+              <div class="buttimg keepxml"></div>
+              <div class="buttimg nbcons"></div>
+              <div class="buttimg genhtml"></div>
+              <div class="buttimg autohtml"></div>
+              <div class="buttimg rdldefault"></div>
+              <div class="buttimg rdlusrdefine"></div>
+              <div class="buttimg rdltextfield"></div>
+              <div class="buttimg tsretain"></div>
+              <div class="buttimg tsprevious"></div>
+            </div>
+            <h4 id='meanings'>Meaning 'General tab' of settings</h4>
+            <div class='divindent'>
+              <p id='srchilite' class='toc gensection'>Source file hi-lighting</p>
+              <div class='divindent dllist '>
+                <dl class="dlofsettings">
+                  <dt id="enblhiid" class="toc tocindent2">Enable highlighting on code editor</dt>
+                  <dd><p>On completion of coverage capture annotate source-code files
+                      with color high-lighting across the code lines.
+                    <hr>
+                  </dd>
+                  <dt id="enblmlthiid" class="toc tocindent2">Enable 
+                    highlighting of multi-line instructions</dt>
+                  <dd>Some lines of source-code may contain multiple method calls, so
+                    this setting annotates the various calls appropriately.
+                    <hr></dd>
+                </dl>
+              </div>
+              <p id='reportcontrol' class='toc gensection'>Report control settings</p>
+              <div class='divindent'>
+                <dl class="dlofsettings">
+                  <dt  id="byprjid" class="toc tocindent2">By-project report</dt>
+                  <dd><p>The reports for each project will be generated as "separate" folder
+                      sets all relating to a project, or depends-on/associate project library
+                      that the principle-project uses.
+                    <p>See <a href="./reportdesc.html#byprjcons">Console by-project</a>, or
+                      <a href="./reportdesc.html#byprjhtml">HTML by-project</a>
+                      report descriptions.</p>
+                    <hr>
+                  </dd>
+                  <dt  id="bygrpid" class="toc tocindent2">By-grouped/bundled report</dt>
+                  <dd><p>The reports for all projects will be generated as a "single" folder
+                      including the principle-project and any depends-on/associate project library
+                      projects.
+                    <p>See <a href="./reportdesc.html#bygrpcons">Console by-grouped/bundled</a>, or
+                      <a href="./reportdesc.html#bygrphtml">HTML by-grouped/bundled</a> report
+                      descriptions.</p>
+                    <hr>
+                  </dd>
+                  <dt  id="keepxmlid" class="toc tocindent2">Keep the XML report file for external processing</dt>
+                  <dd><p>The coverage captures data is processed internally from a binary form
+                      to an XML file. The XML file is then used to further process into console/HTML
+                      reports.</p>
+                    <p>The default OFF: deletes the XML report after creation of any console/HTML
+                      reports.</p>
+                    <p>The purpose of this setting is to allow users to extract/copy the 
+                      XML-file for their own post-processing of data from raw information.
+                    <hr>
+                  </dd>
+
+                  <dt  id="nbconsid" class="toc tocindent2">Show short JaCoCo report in NetBeans console</dt>
+                  <dd><p>Create a report in the Netbeans console (output view).</p>
+                    <hr>
+                  </dd>
+
+                  <dt id="genhtmlid" class="toc tocindent2">Generate complete JaCoCo HTML report</dt>
+                  <dd><p>Create an HTML report into the default report directory 
+                      ( <i>{project}/.jacocodbrad/reportDir/ </i>).
+                    <p>OR, into the user-defined directory location, if set.</p>
+
+                    <p class='notehang'>HTML browsers have limits as to the file path of HTML file
+                      being displayed correctly. This happens due to browser-and-platform
+                      file path limitations.  (See
+                      <a href='./reportdesc.html#browserhtmlerr'>Browser reporting error condition</a>.)
+                  </dd>
+
+                  <dt  id="autohtmlid" class="toc tocindent2">Automatically open generate HTML report</dt>
+                  <dd><p>After the HTML is generated, open the report with the local
+                      default browser automatically.
+                    <p class='notehang'>not all browsers support
+                      automatic launching from Java.
+                    <hr>
+                  </dd>
+                </dl>
+              </div>
+
+              <p id='rdlsettings' class='toc gensection'>Reports directory location</p>
+              <div class='divindent dllist '>
+                <dl class="dlofsettings">
+                  <dt id="rdldefaultid" class="toc tocindent2">Default</dt>
+                  <dd><p>Set for reports and workspace in the default at: 
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{project}/.jacocodbrad/reportDir
+                    <hr>
+                  </dd>
+
+                  <dt id="rdlusrdefineid" class="toc tocindent2">User defined directory</dt>
+                  <dd><p>Use a user defined location/directory for storing reports
+                      into. Will need to complete the text field below.
+                    <p>A directory chooser dialog may popup to assist in 
+                      defining a location/directory.</dd>
+
+                  <dt id="rdltextfieldid" class="toc tocindent2"><i>Location of user directory</i></dt>
+                  <dd><p>Path to a location/directory where reports are to be stored. The
+                      <b>Browse</b> may be used to fill in the location.
+                    <hr>
+                  </dd>
+                </dl>
+              </div>
+
+              <p id='tshead' class='toc gensection'>Timestamp and retention reports</p>
+              <div class='divindent dllist'>
+                <dl class="dlofsettings">
+                  <dt id="tsretainid" class="toc tocindent2">Time stamp and retain</dt>
+                  <dd><p>Create/save reports into a time-stamped directory 
+                      ( as per 'default' or 'user-defined' directory location.<br>
+                      &nbsp;&nbsp;&nbsp;The time-stamped directory name will be:
+                      .../<code>ts_yyyymmdd_hhmmss_ms_reportDir</code>/.....</p>
+                  </dd>
+                  <dt id="tsretainnid" class="toc tocindent2">'N' previous version (.....</dt>
+                  <dd><p>The number of reports that will be retained in time stamp
+                      format directory/file names. As newer reports are generated
+                      older reports will be cleaned-up so only N versions are retained.<br>
+                    <p>0 => all reports are retained with no cleanup.</p>
+                    <p>DEFAULT: 3 versions retention pattern.</p>
+                    <hr>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+            <h3 id="prjtabid"><i>{project}</i> tab (table layout)</h3>
+            <div class="divindent">
+              <p>Modify this tab to add/subtract source-folders for 
+                'source' and/or 'test' source-code of the principle-project. Further
+                refine which packages to <i>cover</i> for inclusion by 
+                setting the 'cover' columns settings.
+              <p>
+                {<i>project</i>}: is the project's name as displayed in the project-view.
+              </p>
+              <p>
+                DEFAULT: include only the source-folder(s) for the principle-project
+                coverage. With the 'all packages' condition applied. Any associated
+                projects will not be included.</p>
+
+              <div class="divindent">
+                <p>
+                  The following image can be played to demonstrate some basics in
+                  changing 'on', 'cover' setting changes and use of the 'Exclude packages'
+                  tab.
+                </p>
+                <div class='gifplayer' 
+                     data-butt-img-id="prjtabid"
+                     data-gifimg-path="./imgs/gif/tableediting.gif">
+                </div>
+                <p class='toc' data-tocscroll-to-id='prjtabid' style="display :none;">Play demo</p>
+              </div>
+            </div>
+            <h3 id="assoctabid">Associated projects tab (table layout)</h3>
+            <div class="divindent">
+              <p>Modify tab contents to set inclusion coverage for
+                an associated-project in reports and collection of coverage.
+                Each associated-project has its own sub-tabbed-pane 
+                and functions in the same manner as a "<i>{project}</i> tab", but for 
+                the associated-project.
+              <p>
+                DEFAULT: is associated-projects are <b>un-selected</b> from inclusion
+                in <i>coverage</i> upon initial setup.</p>
+              <div class="divindent">
+                <p>
+                  Associate projects are shown in a sub-tabbed-pane where each
+                  tab is an associate/sub-project of the principle-project.
+                  The layout and operation of a sub-tab is the same table format as the
+                  principle-project tab table.
+                </p>
+                <div class='gifplayer'
+                     data-butt-img-id="assoctabid"
+                     data-gifimg-path="./imgs/gif/assoctabedit.gif">
+                </div>
+                <p class='toc' data-tocscroll-to-id='assoctabid' style="display :none;">Play demo</p>
+              </div>
+            </div>
+
+            <h3 id="explaintabid">Table layout explained</h3>
+            <div class="divindent">
+              Package tabs contain editable <i>tables</i> of the source folders (src and test)
+              of a project (the tab name is the project name). Each row represents a 
+              package within the folder. By changing the settings a user makes packages
+              inclusive for coverage and reports. (Note: Jacocoagent may collect
+              a lot of data, but only the inclusive packages selected will be reported on.)
+              <p>
+                The table column headings are: <b>On</b>, 
+                <b>Cover</b>, [source folder type], [icon], <b>Folder</b> and
+                <b>Packages</b> as described following ( [xyz] represent a none labeled heading).</p>
+
+              <div  class='mainprjexam'>
+                <div >
+                  <p>Default and initial setting only make the principle-project
+                    source-code folders inclusive.</p>
+                  <img src='imgs/mainprj_src_only.png' alt='missing image'>
+                </div>
+                <div>
+                  <p>Test-source-code and associated-projects
+                    need to be explicitly included through settings beyond the initial
+                    settings.</p>
+                  <img src='imgs/mainprj_srcandtest.png' alt='missing image'>
+                </div>
+              </div>
+              <h4 id="packtabcolexplain">Column heading and cell content explanation</h4>
+              <table class='packagetable'>
+                <caption><p>Description of table headings and cell contents.</p></caption>
+                <tr>
+                  <th>column heading</th>
+                  <th>description</th>
+                </tr>
+                <tr>
+                  <td><p id="onid" class="toc tocindent2"><b>On</b></p>top
+                    change/toggle<br>
+                    &nbsp;&nbsp;<b>click</b> <i>or</i>
+                    <br>
+                    &nbsp;&nbsp;<b>space</b> if cell focused
+                    <br><br>
+                    cell focus<br>
+                    &nbsp;&nbsp;<b>tab</b> next<br>
+                    &nbsp;&nbsp;<b>shift+tab</b> previous<br><br></td>
+                  <td>
+                    <p>Only appears for the source-code/test-source-code folder
+                      rows and applies the ON or OFF condition against the
+                      packages within the source-code/test-source-code folder.</P>
+
+                    <table class='covertab'>
+                      <tr>
+                        <td><img src='imgs/icon/on_code_folder.png' alt='missing image'></td>
+                        <td>Set ON for all the packages in the folder.</td>
+                      </tr>
+                      <tr>
+                        <td><img src='imgs/icon/off_code_folder.png' alt='missing image'></td>
+                        <td>Set OFF for all the packages in the folder.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td><p id="coverid" class="toc tocindent2"><b>Cover</b></p>
+                    change/toggle<br>
+                    &nbsp;&nbsp;<b>click</b> <i>or</i>
+                    <br>
+                    &nbsp;&nbsp;<b>space</b> if cell focused
+                    <br><br>
+                    cell focus<br>
+                    &nbsp;&nbsp;<b>tab</b> next<br>
+                    &nbsp;&nbsp;<b>shift+tab</b> previous</td>
+                  <td>
+                    <p>Controls the package included/covered state for the package the
+                      row represents. The symbols have two flavors representing the
+                      state and representing a state but affected-by another source-folder
+                      settings.
+                    </p>
+                    <p>As multiple source-folders can be included, their
+                      package patterns may overlay each other:
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;src1:&nbsp;&nbsp;<b>org.linux</b> would overlay
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;src2:&nbsp;&nbsp;<b>org.linux</b>
+                    <table class='covertab'>
+                      <tr>
+                        <td><img src='imgs/icon/cover_yes.png' alt='missing image'></td>
+                        <td>Package is set covered within its folder.
+                          <p>This setting may affect other packages and/or
+                            folders as indicated in the "packages" rows
+                            affected background color.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><img src='imgs/icon/cover_no.png' alt='missing image'></td>
+                        <td>(<i>blank</i>) package is NOT covered.</td>
+                      </tr>
+                      <tr>
+                        <td><img src='imgs/icon/cover_by_parent.png' alt='missing image'></td>
+                        <td>Package is covered through an upper-level parent package.
+                          <p>That is: <b>org</b> is upper-level parent 
+                            of <b>org.mytest</b></p></td>
+                      </tr>
+                      <tr>
+                        <td><img src='imgs/icon/affect_by_sibling_cover_yes.png' alt='missing image'></td>
+                        <td>Package is set covered within its folder.
+                          <p><b>But</b> <i>will be included as if covered</i>, as the package is
+                            affected-by another matching pattern.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><img src='imgs/icon/affect_by_sibling_cover_no.png' alt='missing image'></td>
+                        <td>Package is set NOT covered within its folder.
+                          <p><b>But</b> <i>will be included as if covered</i>, as the package is
+                            affected-by another matching pattern.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><img src='imgs/icon/affect_by_sibling_covered_by_parent.png' alt='missing image'></td>
+                        <td>Package is set covered by a parent within its folder.
+                          <p><b>But</b> <i>will be included as if covered</i>, as the package is
+                            affected-by another matching pattern.</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td><p  id="srccdid" class="toc tocindent2">[source-code<br>folder type]</p></td>
+                  <td>
+                    <p>A text indicator as to what kind of folder is
+                      being represented, either source-code or test-source-code
+                      directories.</p>
+                    <table class='covertab'>
+                      <tr>
+                        <td>src</td>
+                        <td>Indicating a source-code folder.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>test</td>
+                        <td>Indicating a test-source-code folder.
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td><p id="iconid" class="toc tocindent2">[icon]</p></td>
+                  <td><p>An icon representing a folder or package row.</p></td>
+                </tr>
+                <tr>
+                  <td><p  id="fdrid" class="toc tocindent2">Folder</p></td>
+                  <td><p>The name of the source-code/test-source-code folder as
+                      defined in the '<i>project-properties &gt; Sources</i>' category
+                      dialog.</p></td>
+                </tr>
+                <tr>
+                  <td><p id="pckagesid" class="toc tocindent2"><b>Packages</b></p>                      
+                    popup-menu<br>
+                    &nbsp;&nbsp;<b>right-click</b> <i>or</i>
+                    <br>
+                    &nbsp;&nbsp;<b>space</b> if cell focused
+                    <br><br>
+                    cell focus<br>
+                    &nbsp;&nbsp;<b>tab</b> next<br>
+                    &nbsp;&nbsp;<b>shift+tab</b> previous</td>
+                  <td><p>The string of a package within its folder, with a background
+                      color to indicated any affecting or affected-by  conditions on the
+                      package.</p>
+                    <p>The field contains a string of the package in the form:
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      'pack1[.pack2[.pack3[- - -]]]]' OR '*' for all packages
+
+                    <table class="packclrs">
+                      <tr>
+                        <td><div  class='packtext'>
+                            <div>pack1.pack2</div>
+                          </div>
+                        </td>
+                        <td><p>(<i>white</i>)</td>
+                        <td><p>Not inclusive for reporting and not affecting and not 
+                            affected-by another package within the same or another
+                            source/test folder.</p></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div  class='packtext packclrlightblue'>*</div></td>
+                        <td><p>(<i>light-blue</i>)</td>
+                        <td><p>This package is set and is affecting
+                            other packages too.</p>
+                          <p>Right-click in the table-cell to get a popup-menu
+                            of package-items that are affected-by this package 
+                            setting (that is: this cell 
+                            is affecting).</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="3" class="imgtd">
+                          <img src='imgs/packclr1affecting.png' alt="missing image"></td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <div  class='packtext packclrlightgray'>unit.isolate</div>
+                        </td>
+                        <td><p>(<i>light-gray</i>)</td>
+                        <td><p>This package will be included as it is affected-by another package.</p>
+                          <p>Right-click in the table-cell to get a popup-menu of
+                            package-item that is affecting this package (that is: 
+                            making this cell affected-by).</p></td>
+                      </tr>
+                      <tr>
+                        <td colspan="3"  class="imgtd">
+                          <img src='imgs/packclr2affectby.png' alt="missing image"></td>
+                      </tr>
+                      <tr>
+                        <td><div  class='packtext packclrpink'>isolate</div></td>
+                        <td><p>(<i>pink</i>)</td>
+                        <td><p>This package is set <span class='packclrpink'>excluded</span> 
+                            explicitly by a setting in the excludes tab.</p></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <br><br>
+        <h3 id="excltabid">Exclude packages tab</h3>
+        <div class="divindent">
+          <p>Modify contents to create an exclude list to be applied to any
+            coverage request. Settings in this
+            tab are separate from the 'Includes pattern(s)' field, to avoid
+            unnecessary collision in include/exclude determination. (Basically,
+            excludes are applied after inclusion completes processing.)
+          <p>
+            DEFAULT: blank.</p>
+
+          <p>The 'Exclude packages' tab is a table of packages to be excluded
+            from coverage and reports. A list of patterns is extracted from the
+            table and provided to the jacocoagent request on processing.
+            Dbrad-coverage does not process excludes patterns except
+            as to provide the patterns (optimized) for jacocoagent
+            and at making of reports (console, HTML, XML).</p>
+          <div class="divindent">
+            <p class='notehang'>EXCLUDE PATTERNS are 
+              <span style="color: red;"><b>NOT</b> PART OF INCLUDES 
+                PATTERN(S)</span> field.</p>
+          </div>
+          <p>The following image is a play-able image to demonstrate most of the
+            usage of the exclude packages table.</p>
+          <div class='gifplayer'
+               data-butt-img-id="excltabid"
+               data-gifimg-path="./imgs/gif/excludetab.gif">
+          </div>
+          <p class='toc' data-tocscroll-to-id='excltabid' 
+             style="display :none;">Play demo</p>
+          <h4 id="exclbuttsect">Dialog controls</h4>
+          <table class='tdtop'>
+            <tr>
+              <td id="addbuttid"><p class="toc tocindent3" 
+                                    data-tocscroll-to-id='addbuttid'
+                                    style="display: none;">Add button</p>
+                Add</td>
+              <td>Enter a valid package into field beside the button, then select button to
+                set. Invalid package entries will result in a message explaining issue.
+                <p>The package string format <code>'package.*'</code>
+                  =&gt; <code>&nbsp;&nbsp;pack1[.pack2.[.pack3[---].* </code></p>
+              </td>
+            </tr>
+            <tr>
+              <td id="removebuttid">
+                <p class="toc tocindent3" 
+                   data-tocscroll-to-id='removebuttid'
+                   style="display: none;">Remove button</p>
+                Remove</td>
+              <td>Select item in table, then select button to remove.</td>
+            </tr>
+            <tr>
+              <td id="tstfrmwkbutt">
+                <p class="toc tocindent3" 
+                   data-tocscroll-to-id='tstfrmwkbutt'
+                   style="display: none;">Test framework excludes</p>
+                org.testng.*<br>org.junit.*<br>junit.*<br>&nbsp;&nbsp;&nbsp;(extension,..)</td>
+              <td><p>Check box items cause exclusion of the most common test frameworks. For 
+                  most coverage requests excluding test frameworks is typical.</p>
+                <p>DEFAULT: all set.</p>
+              </td>
+            </tr>
+          </table>
+          <div class="divindent">
+            <h5 id="excltabcolexplain">Exclude table's column heading and cell content explanation</h5>
+            <table class='excldescriptiontable'>
+              <caption><p>Description of table headings and cell contents.</p></caption>
+              <tr>
+                <th>column heading</th>
+                <th>description</th>
+              </tr>
+              <tr>
+                <td><p id="applyid" class="toc tocindent2"><b>Apply</b></p>
+                  change/toggle<br>
+                  &nbsp;&nbsp;<b>click</b> <i>or</i>
+                  <br>
+                  &nbsp;&nbsp;<b>space</b> if cell focused
+                  <br><br>
+                  cell focus<br>
+                  &nbsp;&nbsp;<b>tab</b> next<br>
+                  &nbsp;&nbsp;<b>shift+tab</b> previous<br><br></td>
+                <td>
+                  <p>Indicates exclude package is to be used for
+                    processing jacocoagent request.</P>
+
+                  <table class='covertab'>
+                    <tr>
+                      <td><img src='imgs/icon/on_code_folder.png' alt='missing image'></td>
+                      <td>Apply exclude pattern.</td>
+                    </tr>
+                    <tr>
+                      <td><img src='imgs/icon/off_code_folder.png' alt='missing image'></td>
+                      <td>Not applied.</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td><p id="exclpckid" class="toc tocindent2"><b>Exclude packages</b></p>
+                <td>
+                  <p>The exclude package pattern.</p>
+                  <table class="packclrs exclpatterntab">
+                    <tr>
+                      <td><div  class='packtext'>
+                          <div>unit.*</div>
+                        </div>
+                      </td>
+                      <td><p>(<i>white</i>)</td>
+                      <td><p>Exclude package is applied .</p></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div  class='packtext packclrlightgray'>unit.isolate.*</div>
+                      </td>
+                      <td><p>(<i>light-gray</i>)</td>
+                      <td><p>Exclude package is overridden by a upper-level
+                          package setting.</p>
+                        <p>Package is excluded by its upper-level setting.</p></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

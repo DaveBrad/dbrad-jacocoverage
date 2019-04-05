@@ -1,0 +1,107 @@
+{
+  "adtalpkgs.listing" : [ ],
+  "exclpkgs.listing" : {
+    "tstbase.*" : false
+  },
+  "pkgfltr.listing" : {
+    "NbModule4SuiteTestModel0" : {
+      "Source Packages" : {
+        "" : {
+          "on" : true,
+          "isTst" : false,
+          "hasJava" : true,
+          "pfCvr" : "COVER_NO"
+        },
+        "suitemodule0" : {
+          "on" : true,
+          "isTst" : false,
+          "hasJava" : true,
+          "pfCvr" : "COVER_YES"
+        }
+      }
+    },
+    "NbModule4SuiteTestModel1" : {
+      "Source Packages" : {
+        "" : {
+          "on" : true,
+          "isTst" : false,
+          "hasJava" : true,
+          "pfCvr" : "COVER_NO"
+        },
+        "suitemodule1" : {
+          "on" : true,
+          "isTst" : false,
+          "hasJava" : true,
+          "pfCvr" : "COVER_YES"
+        }
+      },
+      "Unit Test Packages" : {
+        "" : {
+          "on" : true,
+          "isTst" : true,
+          "hasJava" : false,
+          "pfCvr" : "COVER_NO"
+        }
+      }
+    },
+    "NbModule4SuiteTestModel2" : {
+      "Functional Test Packages" : {
+        "" : {
+          "on" : true,
+          "isTst" : true,
+          "hasJava" : true,
+          "pfCvr" : "COVER_NO"
+        },
+        "tstqa" : {
+          "on" : true,
+          "isTst" : true,
+          "hasJava" : true,
+          "pfCvr" : "COVER_NO"
+        }
+      },
+      "Source Packages" : {
+        "" : {
+          "on" : true,
+          "isTst" : false,
+          "hasJava" : true,
+          "pfCvr" : "COVER_YES"
+        },
+        "suitemodule2" : {
+          "on" : true,
+          "isTst" : false,
+          "hasJava" : true,
+          "pfCvr" : "COVER_BY_PARENT"
+        }
+      },
+      "Unit Test Packages" : {
+        "" : {
+          "on" : true,
+          "isTst" : true,
+          "hasJava" : true,
+          "pfCvr" : "COVER_NO"
+        },
+        "tstbase" : {
+          "on" : true,
+          "isTst" : true,
+          "hasJava" : true,
+          "pfCvr" : "COVER_NO"
+        }
+      }
+    }
+  },
+  "preferences" : {
+    "JaCoCoverage.Editor.EnableCodeHighlighting" : "true",
+    "JaCoCoverage.Editor.EnableCodeHighlightingExtended" : "true",
+    "JaCoCoverage.Excl.Junit" : "true",
+    "JaCoCoverage.Excl.JunitExtension" : "true",
+    "JaCoCoverage.Excl.Testng" : "true",
+    "JaCoCoverage.Html.AutoOpenReport" : "true",
+    "JaCoCoverage.Html.EnableReport" : "false",
+    "JaCoCoverage.NbConsole.EnableReport" : "true",
+    "JaCoCoverage.Prj.OverrideGlobals" : "true",
+    "JaCoCoverage.report.default.dir" : "true",
+    "JaCoCoverage.report.retain" : "0",
+    "JaCoCoverage.report.timestamp" : "false",
+    "JaCoCoverage.report.user.defined.dir" : "./.jacocodbrad/"
+  }
+}

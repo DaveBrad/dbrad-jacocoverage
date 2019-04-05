@@ -1,0 +1,31 @@
+{
+  "adtalpkgs.listing" : [ ],
+  "exclpkgs.listing" : { },
+  "pkgfltr.listing" : {
+    "TestModelArrangement" : {
+      "Source Packages" : {
+        "" : {
+          "on" : true,
+          "isTst" : false,
+          "hasJava" : false,
+          "pfCvr" : "COVER_YES"
+        }
+      }
+    }
+  },
+  "preferences" : {
+    "JaCoCoverage.Editor.EnableCodeHighlighting" : "true",
+    "JaCoCoverage.Editor.EnableCodeHighlightingExtended" : "true",
+    "JaCoCoverage.Excl.Junit" : "true",
+    "JaCoCoverage.Excl.JunitExtension" : "true",
+    "JaCoCoverage.Excl.Testng" : "true",
+    "JaCoCoverage.Html.AutoOpenReport" : "true",
+    "JaCoCoverage.Html.EnableReport" : "true",
+    "JaCoCoverage.NbConsole.EnableReport" : "true",
+    "JaCoCoverage.Prj.OverrideGlobals" : "true",
+    "JaCoCoverage.report.default.dir" : "true",
+    "JaCoCoverage.report.retain" : "0",
+    "JaCoCoverage.report.timestamp" : "false",
+    "JaCoCoverage.report.user.defined.dir" : "./.jacocodbrad/"
+  }
+}

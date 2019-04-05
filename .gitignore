@@ -1,0 +1,50 @@
+/build/
+/dbrad-jacoco-agent-ext/build/
+/dbrad-jacoco-agent-ext/nbproject/private/
+
+/dbrad-jacocoverage-analyzer/build/
+/dbrad-jacocoverage-analyzer/nbproject/private/
+
+/dbrad-jacocoverage-filepackage-mgr/build/
+/dbrad-jacocoverage-filepackage-mgr/nbproject/private/
+
+/dbrad-jacocoverage-lib/build/
+/dbrad-jacocoverage-lib/nbproject/private/
+
+/dbrad-jacocoverage-plugin/build/
+
+### Java ###
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+!/dbrad-jacoco-agent-ext/release/modules/ext/jacocoagent.jar
+!/dbrad-jacoco-agent-ext/release/modules/ext/jacocoant.jar
+
+!/dbrad-jacocoverage-lib/release/modules/ext/commons-io-2.6.jar
+!/dbrad-jacocoverage-ext/release/modules/ext/commons-lang3-3.3.7.jar
+!/dbrad-jacocoverage-ext/release/modules/ext/jackson-annotations-2.9.3.jar
+!/dbrad-jacocoverage-ext/release/modules/ext/jackson-core-2.9.3.jar
+!/dbrad-jacocoverage-ext/release/modules/ext/jackson-databind-2.9.3.jar
+
+nbproject/private/platform-private.properties
+nbproject/private/private.xml
+
+
+dbrad-jacocoverage-analyzer/nbproject/private/platform-private.properties
+dbrad-jacocoverage-analyzer/nbproject/private/private.xml
+
+dbrad-jacocoverage-plugin/nbproject/private/platform-private.properties
+dbrad-jacocoverage-plugin/nbproject/private/private.xml
+
+dbrad-jacocoverage-plugin/test/unit/lib3rdparty/objecttestdata_19_1.jar
+

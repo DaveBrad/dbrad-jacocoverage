@@ -1,0 +1,36 @@
+dbrad-jacocoverage plugin license
+ 
+Terms
+  "Software", is the source code, executable and documentation.
+  "Program", is the executable running in a Netbeans IDE.
+  "Documentation", is explicit HTML/text/image files for the sole purpose of 
+     documenting  software functionality.
+
+- Distribution/redistribution
+  - A modified dbrad-jacocoverage "software" distribution/redistribution is 
+    permitted, with the following conditions:
+    - Class package(s) are renamed from 'dbrad' to the modification author's 
+      unique setting.
+    - UI presentation is renamed from 'dbrad' to modifications author's unique 
+      setting.
+    - UI menu item string should be altered to avoid collision with the 'dbrad' 
+      menu items.
+    - Any 'dbrad' web-addresses (pages or email) are altered to 
+      modification-author's web-addresses.
+  - An <b>un-modified</b> dbrad-jacocoverage "software" distribution/redistribution 
+    is unrestricted.
+  - Distribution within an intranet is permitted if modified for internal purposes.
+ 
+- Usage
+  - The "program" in Netbeans is free to use, both commercial and non-commercial.
+  - The "software" has no warranty as to its fitness for use, and is 'as-is'.
+  
+- Modification
+  - Modification of source must retain any original authors and/or copyright 
+    notices.
+  - Modification of documentation must retain original authors copyright.
+
+- Documentation
+  - The associated online/web documentation of dbrad-jacocoverage is copyrighted 
+    and requires separate permission to use, except as documentation with the 
+    program/software source.

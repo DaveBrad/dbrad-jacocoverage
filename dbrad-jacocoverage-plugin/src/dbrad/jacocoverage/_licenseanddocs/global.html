@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2017 dbradley. -->
+<html>
+  <head>
+    <title>dbrad-jacocoverage global settings</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="docparts.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="tocctrl.css">
+    <script src="tocctrl.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="gifplayer.css">
+    <script src="gifplayer.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="global.css">
+    <script src="global.js"></script>
+
+  </head>
+  <body onload="applyDocIndex(); applyTOC(); applyGifPlayer(); onloadSetImageDivs();"> 
+    <div class='bodywithtoc'>
+      <h1 id='globsetngs'>Global settings</h1>
+      <div class="divindent">
+        <p>Allows code-coverage on a principle-project source-code folder only and has 
+          basic reporting applied for any results. The settings will apply to all
+          Java projects open in the Netbeans IDE, unless the principle-project
+          has the <a href="./prjspec.html">project specific setting</a> set.
+        </p>
+        <div class="divindent">
+          <p>
+            JaCoCoverage-dbrad is a tab within the <code>Tools&gt;options&gt;: Java tab</code><br>
+            <span style='margin-left: 10ch;'>ENSURE TO RESIZE</span>, to see all fields
+          </p>
+        </div>
+        <div id="docindexcpyrght">
+        </div>
+        <p>The settings are duplicated into 
+          <a href="./prjspec.html">project specific</a> settings when a 
+          user sets a principle-project's properties:<br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;'Project-view: {project} &gt; properties &gt; category &gt; 
+          JaCoCoverage-dbrad' to use 
+          <a href="./prjspec.html#setprjid"><b>project specific option</b></a>.
+        </p>
+        <!-- table of content -->
+        <h2 id='tocid'>Table of contents</h2>
+        <div id="tocmaindiv" class="toclist">
+        </div>
+      </div>
+      <h1 id='accesssetings'>Access and setting meanings</h1>
+      <div class="divindent">
+        <p>The global settings are accessed via the menu-bar:
+          &nbsp;&nbsp;&nbsp;&nbsp;<i>Tools</i> &gt; <i>Options</i> : <i>Java</i> tab</p>
+        <h2 id='imgglobal'>Global settings dialog</h2>
+        <div class="maindiv">
+          <!-- the image of the global settings are CSS vs usemap'd so users
+               may select a setting with the mouse/click and be directed to
+               the appropriate meaning -->
+          <div class="img1">
+            <img src="./imgs/global-settings.png" alt="missing image">
+          </div>
+          <!-- zone on the image -->
+          <div class="buttimg enblhi"></div>
+          <div class="buttimg enblmlthi"></div>
+          <div class="buttimg clrtheme"></div>
+          <div class="buttimg byprj"></div>
+          <div class="buttimg bygrpbun"></div>
+          <div class="buttimg keepxml"></div>
+          <div class="buttimg nbcons"></div>
+          <div class="buttimg genhtml"></div>
+          <div class="buttimg autohtml"></div>
+          <div class="buttimg bundjar"></div>
+          <div class="buttimg custjarloc"></div>
+        </div>
+
+        <p>For all cases refer to 
+          <a href="http://www.eclemma.org/jacoco/trunk/doc/counters.html">www.eclemma.org</a>
+          for more detailed explanation as to how the setting apply to JaCoCo-agent coverage.
+
+        <h2 id='meanings'>Meaning of settings</h2>
+        <div class="divindent">
+          <h3 id='srchilite'>Source file hi-lighting</h3>
+          <div class="divindent">
+            <dl class="dlofsettings">
+              <dt id="enblhiid" class="toc">Enable highlighting on code editor</dt>
+              <dd>On completion of coverage capture annotate source-code files
+                with color high-lighting across the code lines.</dd>
+
+              <dt id="enblmlthiid" class="toc">Enable highlighting of multi-line instructions</dt>
+              <dd>Some lines of source-code may contain multiple method calls, so
+                this setting annotates the various calls appropriately.</dd>
+
+              <dt  id="clrthemeid" class="toc">Color theme:</dt>
+              <dd>The colors to use in highlighting. Choose the best for the
+                editor colors.
+                <p>The default will be adequate for most users.
+              </dd>
+            </dl>
+          </div>
+          <h3 id='reportcontrol'>Report control settings</h3>
+          <div class="divindent">
+            <dl class="dlofsettings">
+              <dt id="byprjid" class="toc">By project report</dt>
+              <dd>The reports for each project will be generated as "separate" folder
+                sets all relating to a project, or depends-on/associate project library
+                that the principle-project uses.
+                <p>See <a href="./reportdesc.html#byprjcons">Console by-project</a>, or
+                  <a href="./reportdesc.html#byprjhtml">HTML by-project</a>
+                  report descriptions.</p>
+              </dd>
+
+              <dt id="bygrpbunid"  class="toc">By grouped/bundled report</dt>
+              <dd>The reports for all projects will be generated as a "single" folder
+                including the principle-project and any depends-on/associate project library
+                projects.
+                <p>See <a href="./reportdesc.html#bygrpcons">Console by-grouped/bundled</a>, or
+                  <a href="./reportdesc.html#bygrphtml">HTML by-grouped/bundled</a> report
+                  descriptions.</p>
+              </dd>
+
+              <dt  id="keepxmlid" class="toc">Keep the XML report file for external processing</dt>
+              <dd>The coverage captures data is processed internally from a binary form
+                to an XML file. The XML file is then used to further process into console/HTML
+                reports.
+                <p>The default OFF: deletes the XML report after creation of any console/HTML
+                  reports.</p>
+                <p>The purpose of this setting is to allow users to extract-copy the 
+                  XML-file for their own post-processing of data from raw information.
+              </dd>
+
+              <dt  id="nbconsid" class="toc">Show short JaCoCo report in NetBeans console</dt>
+              <dd>Create a report in the Netbeans console (output view).</dd>
+
+              <dt id="genhtmlid" class="toc">Generate complete JaCoCo HTML report</dt>
+              <dd>Create an HTML report into the default report directory 
+                ( <i>{project}/.jacocodbrad/reportDir/ </i>)</dd>
+
+              <dt  id="autohtmlid" class="toc">Automatically open generate HTML report</dt>
+              <dd>When the HTML is generate open the report with the local
+                default browser automatically. (Note: not all browsers support
+                automatic launching from Java.)</dd>
+            </dl>
+          </div>
+          <h3 id='jacocoagent'>Jacocoagent setting</h3>
+          <div class="divindent">
+            <p>If this is used the jacocoagent will need to be compatible
+              with the bundled version. That is, 0.9.x may not be compatible
+              with 0.8.x versions. (Check with eclemma.)</p>
+            <dl class="dlofsettings">
+              <dt id="bundjarid"  class="toc">JaCoCo library jar</dt>
+              <dd>Un-select to use a custom <i>jacocoagent.jar</i> file.
+                <p>The default ON: use the bundled <i>jacocoagent.jar</i> file
+                  associated with dbrad-jacocoverage.
+              </dd>
+
+              <dt  id="custjarlocid" class="toc">Use custom jacocoagent.jar (x.x.x)</dt>
+              <dd>Use the <b>browse</b> button to select a <i>jacocoagent.jar</i> file 
+                which is compatible with the x.x.x version for report generation. Or enter 
+                the path in the text field.
+                <p>An incompatible <i>jacocoagent.jar</i> version will cause unpredictable
+                  report formatting, or cause an exception.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
