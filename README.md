@@ -55,7 +55,7 @@ As at Oct/Nov2017 a license for dbrad-jacocoverage remains undecided due to Netb
 
 History
 
-* 2019/04/03: Software was uploaded 
+* 2019/04/03: Software was uploaded  (delayed upload due to Apache Netbeans in 2016/2017)
 * 2017/10/29: creation of repository with refining edits for the README.md
 
   
