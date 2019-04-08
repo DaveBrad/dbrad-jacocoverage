@@ -7,8 +7,8 @@ dbrad-jacocoverage is a Netbeans 8.2 module for code coverage using JaCoCo and i
 The NBM files are contained in NBM-files folder, they work for NB 8.2 and seems to work for NB 10 (but as aplha).
 
 Due to the transfer to Apache of Netbeans and its incubation, the dbrad-jacocoverage project was placed on hold. The code
-can be downloaded as a NB project and built and tested on Netbeans 8.2. However, Apache Netbeans 10 the code and be built, but the 
-testing testcases will not run due to missing support in NB 10 (as yet).
+can be downloaded as a NB project and built and tested on Netbeans 8.2. However, for Apache Netbeans 10 the code may be 
+built, but testcases will not run due to missing support in NB 10 (as yet).
 
 Prelimary document can be viewed at dbrad-jacocoverage-plugin dbrad.jacocoverage._licenseanddocs intro.html. (Download just the
 _licenseanddocs folder.)
@@ -51,7 +51,7 @@ Development
   * Test-case scripts have been added to perform functional test of the GUI sections.
 
 License & copyright
-As at Oct/Nov2017 a license for dbrad-jacocoverage remains undecided due to Netbeans Apache incubation.
+As at Oct/Nov2017 a final license for dbrad-jacocoverage remains undecided due to Netbeans Apache incubation.
 
 History
 
